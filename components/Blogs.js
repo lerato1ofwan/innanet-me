@@ -20,8 +20,8 @@ const Blogs = ({posts}) => {
                     variants={yfadeInUp} initial="hidden" animate="show"
                 >
                     {posts.map((post) => (
-                        <motion.div variants={stagger}>
-                            <PostPreviewCard key={post.id} post={post} />
+                        <motion.div variants={stagger} key={post.id}>
+                            <PostPreviewCard post={post} />
                         </motion.div>
                     ))}
                 </motion.div>
