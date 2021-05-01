@@ -1,8 +1,9 @@
 .social-links {
-    flex: 1;
-    align-self: center;
-    padding-right: 3rem;
     height: 9vh;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
 
     ul {
         display: flex;
