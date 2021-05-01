@@ -50,6 +50,7 @@
             ul {
                 display: flex;
                 justify-content: center;
+                padding: 0;
 
                 li {
                     padding: 0 1rem;
@@ -94,6 +95,7 @@
 
         .content {
             flex-direction: column;
+            width: 95%;
 
            .about {
                 margin-bottom: 3rem;
@@ -136,8 +138,14 @@
                 }
            }
 
+           .info {
+               p {
+                   text-align: left;
+               }
+           }
+
            .resume {
-               margin-top: 3rem;
+               margin-top: 1.5rem;
 
                 h2 {
                     padding-left: 0;
@@ -147,7 +155,7 @@
     }
 
     .container::before {
-        width: 8rem;
-        height: 8rem;
+        width: 6rem;
+        height: 6rem;
     }
  }
