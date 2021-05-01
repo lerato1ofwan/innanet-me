@@ -83,6 +83,7 @@
                     display: flex;
                     justify-content: center;
                     align-items: center;
+                    flex-direction: column;
 
                     .send {
                         transition: 0.3s ease-in-out;
@@ -140,8 +141,25 @@
        height: auto;
        margin: 1.5rem 0;
 
-       .form-content {
-        flex-direction: column;
-    }
+       .content {
+            width: 95%;
+
+            .form {
+                display: flex;
+                flex-direction: column;
+                width: 95%;
+                align-items: center;
+                
+                .form-content {
+                    flex-direction: column;
+                    margin: 0;
+    
+                    .input-field, .message-input-field {
+                        max-width: 100%;
+                        width: 100%;
+                    }
+               }
+            }
+       }
    }
 }
