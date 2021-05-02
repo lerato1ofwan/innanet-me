@@ -38,14 +38,16 @@ const Featured = ({post}) => {
                     }}
                 >
                   <Link href={`/blog/${Slug}`}>
-                    <Image
-                            src={imageUrl}
-                            alt={`Cover Image for ${Title}`}
-                            width={img.width}
-                            height={img.height}
-                            placeholder="blur"
-                            blurDataURL={blurDataUrl()}
+                    <div>
+                        <Image
+                                src={imageUrl}
+                                alt={`Cover Image for ${Title}`}
+                                width={img.width}
+                                height={img.height}
+                                placeholder="blur"
+                                blurDataURL={blurDataUrl()}
                         />
+                    </div>
                   </Link>
                     
                 </motion.div>
