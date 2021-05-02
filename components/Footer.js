@@ -2,8 +2,17 @@ import styles from '../styles/Footer.module.scss'
 import Link from 'next/link'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
+import { handleOnSubmit } from '../src/GeneralHelpers'
+import { useState, useEffect } from 'react';
 
 const Footer = () => {
+
+    const [messageSent, setMessageSent] = useState(false);
+
+    useEffect(()=> {
+        setMessageSent(false);
+    }, [messageSent]);
+
     return ( 
         <footer className={styles.footer}>
             <motion.div className={styles.content}
@@ -42,12 +51,22 @@ const Footer = () => {
                     <div className={styles.right}>
                         <h2 className={styles.title}>Say hi<span className={styles.hi}>&#128071;</span></h2>
 
-                        <form type="submit">
+                        <form type="submit" onSubmit={(e) => {
+                                const delivered = handleOnSubmit(e, 'contact');
+                                setMessageSent(delivered);
+                                setTimeout(() => {
+                                    setMessageSent(false);
+                                }, 2500);
+                            }
+                        }>
                             <input type="text" onChange={e => {}} name="name" className={styles['input-field']} placeholder="Your name" autoComplete="off" />
                             <input type="text" onChange={e => {}} name="email" className={styles['input-field']} placeholder="Your email address" />
                             <input type="text" onChange={e => {}} name="subject" className={styles['input-field']} placeholder="The subject" autoComplete="off"/>
                             <textarea type="text" onChange={e => {}} name="message" className={styles['message-input-field']} placeholder="Message" autoComplete="off" rows="20" cols="50"></textarea>
-                            <div className={styles.submit}><button className={styles.send}>Send</button></div>
+                            <div className={styles.submit}>
+                                {!messageSent && <button className={styles.send}>Send</button> }
+                                {messageSent && <p>Ayo</p> }
+                            </div>
                         </form>
 
                     </div>
