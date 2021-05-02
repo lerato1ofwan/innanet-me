@@ -44,7 +44,7 @@ const PostPreviewCard = ({ post }) => {
                 <ul className={styles.tags}>
                     {tags.map((tag, index) => (
                         <li key={index}>
-                            <Link href={`/blog${tag}`}>
+                            <Link href={`/blog?tag=${tag}`}>
                             <a><span>&#35;</span>{tag.replace(/\s+/g, '')}</a>
                             </Link>
                         </li>
