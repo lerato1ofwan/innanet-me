@@ -4,8 +4,17 @@ import handshake from '../public/icons/handshake.svg'
 import Head from 'next/head';
 import { motion } from 'framer-motion';
 import { easing, fadeInUp } from '../src/Motions';
+import { handleOnSubmit } from '../src/GeneralHelpers';
+import { useEffect, useState } from 'react';
 
 const Contact = () => {
+
+    const [messageSent, setMessageSent] = useState(false);
+
+    useEffect(()=> {
+        setMessageSent(false);
+    }, [messageSent]);
+
     return ( 
         <motion.div className={styles.container}
             initial={{ opacity: 0 }}
@@ -41,22 +50,32 @@ const Contact = () => {
 
                 <div className={styles.form}>
                     <p>Contact Form</p>
-                    <form type="submit">
+                    <form type="submit" onSubmit={(e) => {
+                                const delivered = handleOnSubmit(e, 'collaboration');
+                                setMessageSent(delivered);
+                                setTimeout(() => {
+                                    setMessageSent(false);
+                                }, 2500);
+                            }
+                        }>
                         <div className={styles['form-content']}>
                             <div className={styles.left}>
-                                <label for="name">Your name</label><br></br>
-                                <input type="text" onChange={e => {}} name="name" className={styles['input-field']} autoComplete="off" /><br></br>
-                                <label for="email">Your email</label><br></br>
-                                <input type="text" onChange={e => {}} name="email" className={styles['input-field']} />
+                                <label htmlFor="name">Your name</label><br></br>
+                                <input type="text" name="name" className={styles['input-field']} autoComplete="off" /><br></br>
+                                <label htmlFor="email">Your email</label><br></br>
+                                <input type="text" name="email" className={styles['input-field']} />
                             </div>
                            
                             <div className={styles.right}>
-                                <label for="message">Message</label><br></br>
-                                <textarea type="text" onChange={e => {}} name="message" className={styles['message-input-field']} autoComplete="off" rows="5" cols="30"></textarea>
+                                <label htmlFor="message">Message</label><br></br>
+                                <textarea type="text" name="message" className={styles['message-input-field']} autoComplete="off" rows="5" cols="30"></textarea>
                             </div>
                         </div>
                         
-                        <div className={styles.submit}><button className={styles.send}>Send Message</button></div>
+                        <div className={styles.submit}>
+                            {!messageSent && <button className={styles.send}>Send Message</button> }
+                            {messageSent && <p>Ayo</p> }
+                        </div>
                     </form>
                 </div>
             </div>
