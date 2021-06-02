@@ -2,13 +2,18 @@ import styles from '../styles/Navbar.module.scss'
 import Link from 'next/link'
 import SocialIcons from './SocialIcons'
 import { motion } from 'framer-motion'
+import React, { useState, useRef, useEffect } from "react";
 
 const Navbar = ({ isHome }) => {
+
+    const [isOpen, setIsOpen] = useState(false);
+    const [navbarColor, setNavbarColor] = useState("inactive");
+    const navRef = useRef(null);
   
     return ( 
         <div className={styles.navbar}>
 
-            <div className={styles.header}>
+            <div className={`${styles.header} ${styles[`${navbarColor}`]}`}>
                <div id="logo" className={styles.logo}>
                     <Link href='/'>
                         <svg id="logo-icon" width="100" height="58" viewBox="0 0 135 58" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -30,18 +35,12 @@ const Navbar = ({ isHome }) => {
                         <li><Link href="/contact"><a className={`${styles[`nav-link`]} ${styles.collab}`}>Collaborate</a></Link></li>
                     </ul>
 
-                    <div className={styles.burger} id="burger">
-                        <div className={styles.line1}></div>
-                        <div className={styles.line2}></div>
-                    </div>
-
                 </nav>
             </div>
 
             {isHome && <motion.div initial={{ x: 0 }} animate={{ x:  "-100vw" }} transition={{ delay: 2, duration: 1.5 }} className={styles.overlay}></motion.div>}
 
             <SocialIcons isHome={isHome} />
-            
         </div>
     );
 }
