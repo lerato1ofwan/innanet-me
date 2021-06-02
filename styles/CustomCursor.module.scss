@@ -1,6 +1,6 @@
 .cursor {
-  width: 3.5rem;
-  height: 3.5rem;
+  width: 3rem;
+  height: 3rem;
   border: 2px solid white;
   border-radius: 50%;
   position: fixed;
@@ -10,7 +10,7 @@
   transition-property: background, transform;
   transform-origin: 75% 75%;
   transform: translate3d(0, 0, 0);
-  z-index: 999;
+  z-index: 5;
 }
 
 .cursor.black {
@@ -23,8 +23,7 @@
 
 .cursor.nav-active {
   background: var(--accent-secondary);
-  transform: scale(2.5);
-  z-index: -5;
+  transform: scale(1.4);
 }
 
 .title-swipe {
@@ -42,3 +41,4 @@
   transform: scale(2.5);
   opacity: 0.9;
 }
+@media screen and (max-width: 600px) { 
