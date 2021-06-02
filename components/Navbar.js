@@ -46,6 +46,23 @@ const Navbar = ({ isHome }) => {
             width: "1.5rem",
         },
       };
+
+    const toggleNav = (e) => {
+        setIsOpen(!isOpen);
+
+        console.log(navbarColor)
+
+        if(navRef.current.attributes.getNamedItem("style") == null) {
+            setNavbarColor("nav-active");
+            navRef.current.setAttribute("style", "clip-path: circle(2500px at 100% -10%);");
+            document.body.classList.add("hide");
+        } 
+        else {
+            setNavbarColor("inactive");
+            navRef.current.attributes.removeNamedItem("style");
+            document.body.classList.remove("hide");
+        }
+    }
   
     return ( 
         <div className={styles.navbar}>
