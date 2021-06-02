@@ -9,6 +9,43 @@ const Navbar = ({ isHome }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [navbarColor, setNavbarColor] = useState("inactive");
     const navRef = useRef(null);
+
+    const iconVariants = {
+        opened: {
+          rotate: 0,
+        },
+        closed: {
+          rotate: 0,
+        },
+      };
+
+      const line1Variants = {
+        opened: {
+            rotate: 45,
+            y: 5,
+            background: "black",
+        },
+        closed: {
+            rotate: 0,
+            y: 0,
+            background: "white",
+        },
+      };
+
+      const line2Variants = {
+        opened: {
+            rotate: -45,
+            y: -5,
+            width: "2.5rem",
+            background: "black",
+        },
+        closed: {
+            rotate: 0,
+            y: 0,
+            background: "white",
+            width: "1.5rem",
+        },
+      };
   
     return ( 
         <div className={styles.navbar}>
