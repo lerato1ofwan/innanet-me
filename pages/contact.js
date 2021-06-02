@@ -73,7 +73,7 @@ const Contact = () => {
                         </div>
                         
                         <div className={styles.submit}>
-                            {!messageSent && <button className={styles.send}>Send Message</button> }
+                            {!messageSent && <button className={styles.send} id="submit1">Send Message</button> }
                             {messageSent && <p>Ayo</p> }
                         </div>
                     </form>
