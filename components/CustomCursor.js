@@ -5,8 +5,6 @@ import styles from '../styles/CustomCursor.module.scss';
 
 const CustomCursor = (props) => {
 
-  const { pathname } = props;
-
   const cursorRef = useRef(null);
   const [navActive, setNavActive] = useState(null);
   const [cursorColor, setCursorColor] = useState(null);
@@ -38,15 +36,15 @@ const CustomCursor = (props) => {
       if(className != null && (className.toLowerCase().includes("footer"))) {
         setCursorColor("white");
       } else if (className != null && (className.toLowerCase().includes("hero-right") || className.toLowerCase().includes("social-links") || className.toLowerCase().includes("slinks") 
-      || className.toLowerCase().includes("featured") || className.toLowerCase().includes("p-text"))) {
+      || className.toLowerCase().includes("featured") || className.toLowerCase().includes("p-text") || className.toLowerCase().includes("nav-bar"))) {
         setCursorColor("black");
       } else {
         if(pathname == "/blog/[slug]") {
           setCursorColor("black");
         }
       }
-
-      if (item.id === "logo" || item.id === "logo-icon" || item.id === "burger" || item.classList.contains("burger")) {
+      
+      if (item.id === "logo" || item.toString().startsWith("http") || item.id === "logo-icon" || item.id.startsWith("img") || item.id === "burger" || item.id.includes("submit") || item.classList.contains("send") || item.classList.contains("burger") || item.className.toString().toLowerCase().includes("icon")) {
         setNavActive("nav-active");
       } else {
         // cursorRef.current.classList.remove("nav-active");
