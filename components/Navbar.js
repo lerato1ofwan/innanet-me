@@ -106,6 +106,13 @@ const Navbar = ({ isHome }) => {
             {isHome && <motion.div initial={{ x: 0 }} animate={{ x:  "-100vw" }} transition={{ delay: 2, duration: 1.5 }} className={styles.overlay}></motion.div>}
 
             <SocialIcons isHome={isHome} />
+
+            <div id="nav-bar" className={styles['nav-bar']} ref={navRef}>
+                <a href="#" className={styles['nav__link']}>Home</a>
+                <a href="#" className={styles['nav__link']}>About</a>
+                <a href="#" className={styles['nav__link']}>Shop</a>
+                <a href="#" className={styles['nav__link']}>Contact</a>
+            </div>
         </div>
     );
 }
