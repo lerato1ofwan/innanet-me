@@ -61,6 +61,9 @@
 
     .nav-active {
         background:white;
+        svg path {
+            stroke: black;
+        }
     }
     
     .inactive {
@@ -89,10 +92,6 @@
 
 .nav-link:hover {
     opacity: 0.5;
-}
-
-.burger.active {
-    clip-path: circle(2500px at 100% -10%);
 }
 
 .nav-bar {
