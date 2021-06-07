@@ -2,13 +2,72 @@ import styles from '../styles/Navbar.module.scss'
 import Link from 'next/link'
 import SocialIcons from './SocialIcons'
 import { motion } from 'framer-motion'
+import React, { useState, useRef, useEffect } from "react";
 
 const Navbar = ({ isHome }) => {
+
+    const [isOpen, setIsOpen] = useState(false);
+    const [navbarColor, setNavbarColor] = useState("inactive");
+    const navRef = useRef(null);
+
+    const iconVariants = {
+        opened: {
+          rotate: 0,
+        },
+        closed: {
+          rotate: 0,
+        },
+      };
+
+      const line1Variants = {
+        opened: {
+            rotate: 45,
+            y: 5,
+            background: "black",
+        },
+        closed: {
+            rotate: 0,
+            y: 0,
+            background: "white",
+        },
+      };
+
+      const line2Variants = {
+        opened: {
+            rotate: -45,
+            y: -5,
+            width: "2.5rem",
+            background: "black",
+        },
+        closed: {
+            rotate: 0,
+            y: 0,
+            background: "white",
+            width: "1.5rem",
+        },
+      };
+
+    const toggleNav = (e) => {
+        setIsOpen(!isOpen);
+
+        console.log(navbarColor)
+
+        if(navRef.current.attributes.getNamedItem("style") == null) {
+            setNavbarColor("nav-active");
+            navRef.current.setAttribute("style", "clip-path: circle(2500px at 100% -10%);");
+            document.body.classList.add("hide");
+        } 
+        else {
+            setNavbarColor("inactive");
+            navRef.current.attributes.removeNamedItem("style");
+            document.body.classList.remove("hide");
+        }
+    }
   
     return ( 
         <div className={styles.navbar}>
 
-            <div className={styles.header}>
+            <div className={`${styles.header} ${styles[`${navbarColor}`]}`}>
                <div id="logo" className={styles.logo}>
                     <Link href='/'>
                         <svg id="logo-icon" width="100" height="58" viewBox="0 0 135 58" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -30,18 +89,30 @@ const Navbar = ({ isHome }) => {
                         <li><Link href="/contact"><a className={`${styles[`nav-link`]} ${styles.collab}`}>Collaborate</a></Link></li>
                     </ul>
 
-                    <div className={styles.burger} id="burger">
-                        <div className={styles.line1}></div>
-                        <div className={styles.line2}></div>
+                    <div id="burger" className={styles['burger-div']}>
+                        <motion.div className={styles.burger} id="burger" 
+                            variants={iconVariants}
+                            animate={isOpen ? "opened" : "closed"}
+                            whileHover={{ scale: 1.1 }}
+                            onClick={toggleNav}
+                        >
+                            <motion.div variants={line1Variants} className={styles.line1}></motion.div>
+                            <motion.div variants={line2Variants} className={styles.line2}></motion.div>
+                        </motion.div>
                     </div>
-
                 </nav>
             </div>
 
             {isHome && <motion.div initial={{ x: 0 }} animate={{ x:  "-100vw" }} transition={{ delay: 2, duration: 1.5 }} className={styles.overlay}></motion.div>}
 
             <SocialIcons isHome={isHome} />
-            
+
+            <div id="nav-bar" className={styles['nav-bar']} ref={navRef}>
+                <a href="#" className={styles['nav__link']}>Home</a>
+                <a href="#" className={styles['nav__link']}>About</a>
+                <a href="#" className={styles['nav__link']}>Shop</a>
+                <a href="#" className={styles['nav__link']}>Contact</a>
+            </div>
         </div>
     );
 }

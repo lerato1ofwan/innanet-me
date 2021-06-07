@@ -14,4 +14,7 @@
 .launch-content {
   text-align: center;
 }
-/*# sourceMappingURL=Home.module.css.map */
+
+.main {
+  position: absolute;
+}
