@@ -23,6 +23,10 @@
 .time {
     display: flex;
     flex-direction: column;
+
+    .time-value {
+        font-size: 1.5rem;
+    }
 }
 
 @media screen and (max-width: 900px) { 
