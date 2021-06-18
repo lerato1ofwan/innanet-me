@@ -2,11 +2,9 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.scss'
 import CountdownTimer from '../components/CountdownTimer'
 import Hero from '../components/Hero'
+import { isInDev } from '../utils/GeneralHelpers'
 
 export default function Home() {
-
-  const inDev = new Date();
-  const launchDate = new Date('July 02, 2021 12:00:00');
 
   return (
     <div>
@@ -15,7 +13,7 @@ export default function Home() {
         <link rel="icon" href="/logo.svg" />
       </Head>
 
-      {inDev > launchDate ? 
+      { isInDev() ? 
         <div className={styles['launch-container']}>
           <div className={styles['launch-content']}>
             <h1>Innanet → me [Personal Website]</h1>
@@ -25,7 +23,7 @@ export default function Home() {
         <div>
           <Hero />
         </div>
-        }
+      }
       
     </div>
   )
