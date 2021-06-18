@@ -1,8 +1,13 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.scss'
 import CountdownTimer from '../components/CountdownTimer'
+import Hero from '../components/Hero'
 
 export default function Home() {
+
+  const inDev = new Date();
+  const launchDate = new Date('July 02, 2021 12:00:00');
+
   return (
     <div>
         <Head>
@@ -10,12 +15,18 @@ export default function Home() {
         <link rel="icon" href="/logo.svg" />
       </Head>
 
-      <div className={styles.container}>
-        <div className={styles.content}>
-          <h1>Innanet → me [Personal Website]</h1>
-          <CountdownTimer />
+      {inDev > launchDate ? 
+        <div className={styles['launch-container']}>
+          <div className={styles['launch-content']}>
+            <h1>Innanet → me [Personal Website]</h1>
+            <CountdownTimer />
+          </div>
+        </div> :
+        <div>
+          <Hero />
         </div>
-      </div>
+        }
+      
     </div>
   )
 }
