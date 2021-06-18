@@ -1,0 +1,33 @@
+.days{
+    grid-area: days;
+}
+.hours{
+    grid-area: hours;
+}
+.minutes{
+    grid-area: minutes;
+}
+.seconds{
+    grid-area: seconds;
+}
+
+.countdown {
+    letter-spacing: .2rem;
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template:
+    'days hours minutes seconds'
+}
+
+.time {
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (max-width: 900px) { 
+    .countdown {
+        width: 70%;
+        margin: 0 auto;
+    }
+}
