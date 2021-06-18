@@ -31,7 +31,8 @@
 
 @media screen and (max-width: 900px) { 
     .countdown {
-        width: 70%;
+        grid-gap: .5rem;
+        width: 90%;
         margin: 0 auto;
     }
 }
