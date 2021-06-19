@@ -1,0 +1,34 @@
+.container {
+    display: flex;
+    height: 86vh;
+    
+    .left-content {
+        background-color: #1A1818; 
+        flex: 3.5;
+       
+
+  
+    }
+
+    .right-content {
+        flex: 1;
+        align-self: center;
+        margin-right: 3rem;
+
+
+    }
+}
+
+@media screen and (max-width: 768px) { 
+    .container {
+        background-color: red;
+
+        .left-content {
+            flex: 1;
+        }
+    }
+
+    .right-content{
+        display: none;
+    }
+}
