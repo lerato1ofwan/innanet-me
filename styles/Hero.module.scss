@@ -1,8 +1,8 @@
 .container {
     display: flex;
-    height: 86vh;
+    height: 88vh;
     
-    .left-content {
+    .left {
         background-color: #1A1818; 
         flex: 3.5;
        
@@ -10,10 +10,39 @@
   
     }
 
-    .right-content {
+    .right {
         flex: 1;
         align-self: center;
         margin-right: 3rem;
+        position: relative;
+
+        .content {
+            position: absolute;
+            left: 25%;
+            top: 50%;
+            width: 100%;
+            text-align: center;
+            transform: translate(-50px, -50px) rotate(-90deg);
+
+   
+
+            .dev path:nth-child(1) {
+             
+
+            }
+            .dev path:nth-child(2) {
+         
+            }
+            .dev path:nth-child(3) {
+              
+            }
+
+            p {
+                color: #DD59A5;
+                margin: 0;
+                font-weight: 500;
+            }
+        }
 
 
     }
@@ -23,12 +52,12 @@
     .container {
         background-color: red;
 
-        .left-content {
+        .left {
             flex: 1;
         }
     }
 
-    .right-content{
+    .right{
         display: none;
     }
 }
