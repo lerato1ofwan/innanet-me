@@ -2,6 +2,7 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.scss'
 import CountdownTimer from '../components/CountdownTimer'
 import Hero from '../components/Hero'
+import Featured from '../components/Featured'
 import { isInDev } from '../utils/GeneralHelpers'
 
 export default function Home() {
@@ -22,6 +23,7 @@ export default function Home() {
         </div> :
         <div>
           <Hero />
+          <Featured />
         </div>
       }
       
