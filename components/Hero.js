@@ -4,7 +4,6 @@ import Image from 'next/image'
 
 const Hero = () => {
 
-
     return (
         <div className={styles.container}>
 
@@ -14,6 +13,7 @@ const Hero = () => {
                 <div className={styles.action}>
                     <Link href="/blogs"><a>Check The Blog</a></Link>
                 </div>
+                
             </div>
 
             <div className={styles['right']}>
@@ -25,6 +25,13 @@ const Hero = () => {
                     </svg>
                     <p>&amp; hobbist designer</p>
                 </div>
+            </div>
+
+            <div className={styles.scroll}>
+                <svg width="41" height="80" viewBox="0 0 41 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="3" y="3" width="35" height="74" rx="17.5" stroke="#F5EFEF" strokeWidth="6"/>
+                    <circle className={styles.circle} cx="20" cy="21" r="10" transform="translate(0 0)" fill="#F5EFEF"/>
+                </svg>
             </div>
             
         </div>
