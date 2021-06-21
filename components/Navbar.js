@@ -25,7 +25,7 @@ const Navbar = () => {
                     <ul>
                         <li><Link href="/blog"><a>Blog</a></Link></li>
                         <li><Link href="/about"><a>About</a></Link></li>
-                        <li><Link href="/collaborate-with-me"><a>Collaborate</a></Link></li>
+                        <li><Link href="/collaborate-with-me"><a className={styles.collab}>Collaborate</a></Link></li>
                     </ul>
 
                     <div className={styles.burger}>
