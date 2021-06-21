@@ -5,6 +5,15 @@
     .left {
         background-color: #1A1818; 
         flex: 3.5;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        h1, p, a {
+            width: 90%;
+            margin: 1.5rem auto;
+            color: rgb(245, 239, 239);
+        }
     }
 
     .right {
@@ -27,7 +36,6 @@
                 stroke-dasharray: 360px;
                 stroke-dashoffset: 360;
                 animation: dev-animation 2s forwards ease 0.2s;
-
             }
 
             .dev path:nth-child(2) {
@@ -49,8 +57,6 @@
                 min-width: 200px;
             }
         }
-
-
     }
 }
 
@@ -98,7 +104,6 @@
             background-color: #1A1818;
 
             .content{
-             
                 right: 50;
                 transform: translate(25px) rotate(0deg);
                 display: flex;
