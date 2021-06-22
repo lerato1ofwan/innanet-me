@@ -37,18 +37,6 @@
                 margin: 0 0 3rem 0;
                 padding-right: 1.5rem;
             }
-
-            .action {
-                text-align: center;
-                padding: 0.8rem 1rem;
-                border-radius: 1.2rem;
-                color: white;
-                font-weight: bold;
-                background: #8c41ee;
-                letter-spacing: 0.025rem;
-                width: 8rem;
-                font-size: 0.85rem;
-            }
         }
 
         .right {
@@ -87,18 +75,20 @@
 
 @media screen and (max-width: 956px) and (min-width: 768px) {
     .container {
-        height: 90vh;
+        height: auto;
 
         .content {
             margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+
+            
         }
     }
  }
 
 @media screen and (max-width: 768px) { 
     .container {
-        height: 100vh;
-
+        height: auto;
 
         .content {
             margin: 1.5rem;
@@ -115,13 +105,12 @@
                     margin-bottom: 1.5rem;
                 }
 
-                .action {
-                    margin: 0 auto;
-                }
             }
 
             .right {
                 display: flex;
+                justify-content: center;
+                padding-bottom: 1.5rem;
     
                 img {
                     width: 400px;

@@ -1,5 +1,4 @@
 import styles from '../styles/Hero.module.scss'
-import Link from 'next/link'
 import Image from 'next/image'
 import Button from './Button'
 
@@ -12,7 +11,7 @@ const Hero = () => {
                 <h1>Welcome to my dev space</h1>
                 <p>I’m working on the brand, read my articles for now.</p>
            
-                <Button text="Check The Blog" type="gradient-action" />
+                <Button text="Check The Blog" type="gradient-action" link="blogs"/>
                 
             </div>
 
