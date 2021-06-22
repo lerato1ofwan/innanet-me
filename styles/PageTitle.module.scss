@@ -1,0 +1,12 @@
+.text {
+        text-transform: uppercase;
+        letter-spacing: 0.25rem;
+        font-weight: bold;
+        color: #DD59A5;   
+}
+
+@media screen and (max-width: 768px) {  
+    .text {
+        font-size: 0.85rem;
+    }
+}
