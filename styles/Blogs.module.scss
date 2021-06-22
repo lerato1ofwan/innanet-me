@@ -1,0 +1,30 @@
+.container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;    
+    background: linear-gradient(to bottom, #1A1818 50%, #fff 50%);
+    
+    .content {
+        width: 90%;
+        height: 100%;
+        margin: 0 auto;
+    
+        .heading {
+            padding: 5rem 0 0 0;
+            
+            .subtitle {
+                color: rgb(230, 227, 227);
+
+                span {
+                    margin-left: .5rem;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {  
+    .subtitle {
+        font-size: 0.85rem;
+    }
+}

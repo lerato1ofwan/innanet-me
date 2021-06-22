@@ -2,13 +2,14 @@ import styles from '../styles/Featured.module.scss'
 import Link from 'next/link'
 import Image from 'next/image'
 import featuredImg from '../public/imgs/featured-img.jpg'
+import PageTitle from './PageTitle'
 
 const Featured = () => {
     return ( 
         <div className={styles.container}>
 
             <div className={styles.heading}>
-                <p>Featured post</p>
+                <PageTitle text="Featured post"/>
                 <Link href="/"><a>Views Of A 21-Year-Old Software Developer.</a></Link>
             </div>
             
@@ -36,6 +37,7 @@ const Featured = () => {
                         alt='Featured post image'
                         width={500}
                         height={300}
+                        placeholder='blur'
                     />
                 </div>
             

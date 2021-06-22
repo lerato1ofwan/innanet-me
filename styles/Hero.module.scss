@@ -152,16 +152,8 @@
         .left {
             flex: 1.5;
 
-            .scroll {
-                position: absolute;
-                bottom: 0;
-    
-                svg {
-                    width: 2rem;
-                }
-            }
-
             .action {
+                margin-top: 4rem;
                 a {
                     letter-spacing: 0.025rem;
                     padding: 0.8rem;
@@ -174,6 +166,15 @@
 
             h1 {
                 font-size: 2rem;
+            }
+
+            .scroll {
+                position: absolute;
+                bottom: 0;
+    
+                svg {
+                    width: 2rem;
+                }
             }
         }
 

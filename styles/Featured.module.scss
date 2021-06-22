@@ -9,13 +9,6 @@
         width: 90%; 
         margin: 0 auto;
 
-        p {
-            text-transform: uppercase;
-            letter-spacing: 0.3rem;
-            font-weight: bold;
-            color: #DD59A5;
-        }
-
         a {
             font-weight: 600;
             font-size: 1.5rem;
@@ -106,8 +99,9 @@
     .container {
         height: 100vh;
 
+
         .content {
-            margin-top: 1.5rem;
+            margin: 1.5rem;
             height: 70%;
             flex-direction: column-reverse;
 
@@ -127,11 +121,12 @@
             }
 
             .right {
-                text-align: center;
+                display: flex;
     
                 img {
                     width: 400px;
                     border-radius: 0;
+                    align-self: center;
                 }
             }
         }
