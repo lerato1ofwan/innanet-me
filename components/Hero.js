@@ -1,6 +1,7 @@
 import styles from '../styles/Hero.module.scss'
 import Link from 'next/link'
 import Image from 'next/image'
+import Button from './Button'
 
 const Hero = () => {
 
@@ -10,9 +11,8 @@ const Hero = () => {
             <div className={styles['left']}>
                 <h1>Welcome to my dev space</h1>
                 <p>I’m working on the brand, read my articles for now.</p>
-                <div className={styles.action}>
-                    <Link href="/blogs"><a>Check The Blog</a></Link>
-                </div>
+           
+                <Button text="Check The Blog" type="gradient-action" />
                 
             </div>
 

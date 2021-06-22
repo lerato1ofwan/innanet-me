@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import featuredImg from '../public/imgs/featured-img.jpg'
 import PageTitle from './PageTitle'
+import Button from './Button'
 
 const Featured = () => {
     return ( 
@@ -25,9 +26,8 @@ const Featured = () => {
                         <br></br>
                         This is really where my story began.
                     </p>
-                    <div className={styles.action}>
-                        <Link href="/blogs"><a>Read More</a></Link>
-                    </div>
+                    
+                    <Button text="Read More" type="blue-action" />
                     
                 </div>
 
