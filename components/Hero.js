@@ -11,7 +11,7 @@ const Hero = () => {
                 <h1>Welcome to my dev space</h1>
                 <p>I’m working on the brand, read my articles for now.</p>
            
-                <Button text="Check The Blog" type="gradient-action" link="blogs"/>
+                <Button text="Check The Blog" type="gradient-action" link="blog"/>
                 
             </div>
 
@@ -22,7 +22,7 @@ const Hero = () => {
                         <path d="M94.0541 16.4998V30.6998H116.954V43.8998H94.0541V59.2998H119.954V72.9998H76.9541V2.7998H119.954V16.4998H94.0541Z" stroke="#1B1B1B" strokeWidth="4"/>
                         <path d="M198.956 2.7998L174.056 72.9998H152.656L127.756 2.7998H145.956L163.356 55.7998L180.856 2.7998H198.956Z" stroke="#1B1B1B" strokeWidth="4"/>
                     </svg>
-                    <p>&amp; hobbist designer</p>
+                    <p>&amp; hobbyist designer</p>
                 </div>
             </div>
 

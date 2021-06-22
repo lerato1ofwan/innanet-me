@@ -11,9 +11,9 @@ export default function Home({posts}) {
   return (
     <div>
         <Head>
-        <title>Lerato Letsepe | Home</title>
-        <link rel="icon" href="/logo.svg" />
-      </Head>
+          <title>Lerato Letsepe | Home</title>
+          <link rel="icon" href="/logo.svg" />
+        </Head>
 
       { isInDev() ? 
         <div className={styles['launch-container']}>
