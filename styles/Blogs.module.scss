@@ -2,7 +2,7 @@
     height: 100vh;
     display: flex;
     flex-direction: column;    
-    background: linear-gradient(to bottom, #1A1818 50%, #fff 50%);
+    background: linear-gradient(to bottom, #1A1818 50%, #F4F7F6 50%);
     
     .content {
         width: 90%;
@@ -27,17 +27,6 @@
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             grid-auto-rows: 1fr;
             grid-gap: .85rem;
-
-            .blog {
-                width: 100%;
-                height: 100%;
-                background-color: blue;
-
-                .cover-image {
-                    height: 250px;
-                }
-
-            }
         }
 
         .more {
@@ -48,12 +37,14 @@
     }
 }
 
-@media screen and (max-width: 768px) {  
+@media screen and (max-width: 600px) {  
     .subtitle {
-        font-size: 0.85rem;
-    }
-}
-
-@media screen and (max-width: 580px) {
-
+            font-size: 0.85rem;
+        }
+    
+    .blogs-container {
+        display: flex;
+        justify-items: center;
+    }    
+ 
 }
