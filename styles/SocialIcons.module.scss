@@ -1,0 +1,20 @@
+.social-links {
+    flex: 1;
+    align-self: center;
+    margin-right: 3rem;
+
+    ul {
+        display: flex;
+        justify-content: space-around;
+
+        li {
+            list-style: none;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) { 
+    .social-links{
+        display: none;
+    }
+}
