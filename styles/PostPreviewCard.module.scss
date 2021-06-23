@@ -21,17 +21,28 @@
            transition: opacity 0.3s ease-in-out;
 
            ul {
-               display: flex;
-               padding-left: 1.5rem;
-               justify-content: center;
+                padding-left: 1.5rem;
+                list-style: none;
+                display: flex;
                 
-
                li {
-                   list-style: none;
-                   margin-right: 1.5rem;
-                   border:1px solid white;  
-                   border-radius: 50%;
-                   padding: .4rem;
+                   margin-right: 1rem;
+                   display: flex;
+                   justify-content:center;
+                   align-content: center;
+
+                   a {
+                        border: 1.5px solid white;  
+                        border-radius: 50%;
+                        height: 100%;
+                        padding: .25rem .25rem 0 .25rem;
+
+                       .social {
+                            filter: invert(90%);
+                       }
+                   }
+
+                   
                }
            }
         }
@@ -82,6 +93,7 @@
             width: 90%;
 
             .avatar {
+                align-self: center;
                 border-radius: 50%;
                 object-fit: cover;
             }
@@ -89,6 +101,12 @@
             p {
                 margin-left: 1.5rem;
                 font-weight: 500;
+                align-items: center;
+            }
+
+            .date {
+                font-size: 0.65rem;
+                align-self: center;
             }
         }
     }
@@ -96,23 +114,35 @@
 
 .blog:hover {
     box-shadow: 0 0.4rem 2rem rgba(34, 68, 123, 0.2);
-    cursor: pointer;
+   
 }
 
-.cover-image img:hover {
+.cover-image .cover:hover {
+    cursor: pointer;
     transform: scale(1.1); 
     opacity: 0.5;
 }
 
+.socials:hover {
+    cursor: pointer;
+    opacity: 1;
+}
+
+.social:hover {
+    opacity: 0.8;
+    cursor: pointer;
+ }
+
 .cover-image:hover {
     background-color: #1A1818;
+    cursor: pointer;
 
     .socials {
         opacity: 1;
     }
 }
 
-@media screen and (max-width: 900px) { 
+@media screen and (max-width: 850px) { 
     .blog {
         height: auto;
         box-shadow: 0 0.8rem 2.5rem rgba(34, 68, 123, 0.2);
@@ -124,11 +154,5 @@
         .tags {
             font-size: 0.75rem;  
         }
-    }
-}
-
-@media screen and (max-width: 900px) { 
-    .blog{
-        height: auto;
     }
 }

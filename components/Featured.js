@@ -25,7 +25,7 @@ const Featured = ({post}) => {
 
                 <div className={styles.left}>
                     <div dangerouslySetInnerHTML={{__html:`<p>${FeaturedSubtitle}</p>`}}></div>
-                    <Button text="Read More" type="blue-action" link={`blogs/${Slug}`}/>
+                    <Button text="Read More" type="blue-action" link={`blogs/${Slug}`} />
                 </div>
 
                 <div className={styles.right}>
