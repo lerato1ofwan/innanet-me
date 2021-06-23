@@ -7,12 +7,14 @@ module.exports = {
 
   env: {
     STRAPI_URL: process.env.STRAPI_URL,
-    IMAGES_DOMAIN: process.env.IMAGES_DOMAIN
+    IMAGES_DOMAIN: process.env.IMAGES_DOMAIN,
+    IMAGES_DOMAIN: process.env.NEXT_PUBLIC_HOST,
   },
 
   publicRuntimeConfig: {
     STRAPI_URL: process.env.STRAPI_URL,
-    IMAGES_DOMAIN: process.env.IMAGES_DOMAIN
+    IMAGES_DOMAIN: process.env.IMAGES_DOMAIN,
+    IMAGES_DOMAIN: process.env.NEXT_PUBLIC_HOST,
   },
 
   images: {
