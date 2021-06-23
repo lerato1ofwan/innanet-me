@@ -1,7 +1,7 @@
 import Footer from "./Footer"
 import Navbar from "./Navbar"
 import styles from '../styles/Layout.module.scss'
-import { isInDev } from "../utils/GeneralHelpers"
+import { isInDev } from "../src/GeneralHelpers"
 
 const Layout = ({ children }) => {
 

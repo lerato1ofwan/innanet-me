@@ -4,8 +4,12 @@
     padding: .85rem 1.4rem;
     font-size: .8rem;
     font-weight: 600;
-    color: rgb(245, 239, 239);
+    color: var(--light-secondary);
     text-align: center;
+}
+
+.dark {
+    color: var(--dark-primary);
 }
 
 .gradient-action {
@@ -14,14 +18,14 @@
 
     a {
         padding: 0.8rem 1rem;
-        background: rgb(140,65,238);
-        background: linear-gradient(90deg, rgba(140,65,238,1) 0%, rgba(140,65,238,1) 7%, rgba(221,89,165,1) 100%);
+        background: var(--btn-primary);
+        background: linear-gradient(90deg, rgba(140,65,238,1) 0%, var(--btn-primary) 7%, var(--accent-primary) 100%);
     }
 }
 
 .blue-action {
     a {
-        background: #8c41ee;
+        background: var(--btn-primary);
     }
 }
 

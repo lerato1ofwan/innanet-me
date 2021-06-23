@@ -1,8 +1,7 @@
 .container {
-    height: 100vh;
     display: flex;
     flex-direction: column;    
-    background: linear-gradient(to bottom, #1A1818 50%, #F4F7F6 50%);
+    background: linear-gradient(to bottom, var(--dark-secondary) 50%, var(--light-primary) 50%);
     
     .content {
         width: 90%;
@@ -14,7 +13,7 @@
             margin-bottom: 3rem;
             
             .subtitle {
-                color: rgb(230, 227, 227);
+                color: var(--light-primary);
 
                 span {
                     margin-left: .5rem;
@@ -33,18 +32,27 @@
             display: flex;
             justify-content: center;
             margin: 3rem auto;
+            
+            a {
+                color: var(--dark-primary);;
+                transition: all .3s ease-in-out; 
+            }
         }
     }
 }
 
+.more a:hover{
+    box-shadow: 0 0.4rem 2rem rgba(34, 68, 123, 0.2);
+}
+
 @media screen and (max-width: 600px) {  
+  
     .subtitle {
-            font-size: 0.85rem;
-        }
-    
+        font-size: 0.85rem;
+    }
+
     .blogs-container {
         display: flex;
         justify-items: center;
-    }    
- 
+    } 
 }

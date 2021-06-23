@@ -3,7 +3,7 @@
     height: 9vh;
     
     .header {
-        background-color: #1A1818;
+        background-color: var(--dark-primary);
         display: flex;   
         justify-content: space-between;
         flex: 3.5;
@@ -19,12 +19,12 @@
                 display: flex;
                 justify-content: space-around;
                 li {
-                    color: white;
+                    color: var(--light-primary);
                     margin-left: 1.5rem;
                     list-style: none;
 
                     .collab {
-                        background-color: #BFD6FF;
+                        background-color: var(--accent-secondary);
                         padding: .5rem;
                         color: #6E00FF;
                         font-weight: 600;
@@ -41,7 +41,7 @@
                 width: 2.5rem;
                 height: 0.2rem;
                 margin: 0.4rem;
-                background: white;
+                background: var(--light-secondary);
                 pointer-events: none;
             }
 
@@ -49,7 +49,7 @@
                 width: 1.5rem;
                 height: 0.2rem;
                 margin: 0.4rem;
-                background: white;
+                background: var(--light-secondary);
                 pointer-events: none;
             }
         }
@@ -58,7 +58,6 @@
 
 @media screen and (max-width: 768px) { 
     .navbar {
-        background-color: red;
 
         .header {
             flex: 1;

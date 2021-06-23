@@ -2,7 +2,7 @@
     max-width: 400px;
     position: relative;
     transition: 0.3s;
-    background-color: white;
+    background-color: var(--light-secondary);
     min-height: 580px;
 
     .cover-image {
@@ -32,7 +32,7 @@
                    align-content: center;
 
                    a {
-                        border: 1.5px solid white;  
+                        border: 1.5px solid var(--light-secondary);  
                         border-radius: 50%;
                         height: 100%;
                         padding: .25rem .25rem 0 .25rem;
@@ -62,6 +62,7 @@
 
         p {
             font-size: 0.85rem;  
+            word-wrap: break-word;
         }
 
         .tags {
@@ -75,7 +76,7 @@
                 list-style: none;
                 
                 a {
-                    color: #DD59A5;
+                    color: var(--accent-primary);
                     font-size: 0.85rem;  
                     font-weight: 500;
                 }
@@ -134,7 +135,7 @@
  }
 
 .cover-image:hover {
-    background-color: #1A1818;
+    background-color: var(--dark-primary);
     cursor: pointer;
 
     .socials {
