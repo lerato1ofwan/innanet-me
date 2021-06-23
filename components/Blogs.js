@@ -21,7 +21,7 @@ const Blogs = ({posts}) => {
                 </div>
                 
                 <div className={styles.more}>
-                    <Button text="View All" type="blue-action" link="blogs"/>
+                    <Button text="View All" type="" link="blog" />
                 </div>
     
             </div>
