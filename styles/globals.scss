@@ -30,3 +30,13 @@ a {
 h1 {
   margin: 0;
 }
+
+input, textarea {
+  font-family: "Poppins";
+  font-size: 0.75rem;
+  letter-spacing: 0.025rem;
+  outline: none;
+  border: 0.1rem solid var(--light-primary);
+  color: var(--light-primary);
+  background-color: transparent;
+}
