@@ -36,10 +36,10 @@ const Footer = () => {
                         <h2 className={styles.title}>Say hi<span className={styles.hi}>&#128071;</span></h2>
 
                         <form type="submit">
-                            <input type="text" onChange={e => {}} name="name" className={styles['input-field']} placeholder="Your name" autocomplete="off" />
+                            <input type="text" onChange={e => {}} name="name" className={styles['input-field']} placeholder="Your name" autoComplete="off" />
                             <input type="text" onChange={e => {}} name="email" className={styles['input-field']} placeholder="Your email address" />
-                            <input type="text" onChange={e => {}} name="subject" className={styles['input-field']} placeholder="The subject" autocomplete="off"/>
-                            <textarea type="text" onChange={e => {}} name="message" className={styles['message-input-field']} placeholder="Message" autocomplete="off" rows="20" cols="50"></textarea>
+                            <input type="text" onChange={e => {}} name="subject" className={styles['input-field']} placeholder="The subject" autoComplete="off"/>
+                            <textarea type="text" onChange={e => {}} name="message" className={styles['message-input-field']} placeholder="Message" autoComplete="off" rows="20" cols="50"></textarea>
                             <div className={styles.submit}><button className={styles.send}>Send</button></div>
                         </form>
 
