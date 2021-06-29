@@ -20,3 +20,7 @@ export const getDate = (date) => {
 export const getMonth = (monthNumber) => {
     return months[monthNumber];
 }
+
+export const sortByDate = (a, b) => {
+    return new Date(b.PublishedDate) - new Date(a.PublishedDate)
+} 
