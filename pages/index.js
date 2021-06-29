@@ -33,16 +33,16 @@ export default function Home({posts}) {
   )
 }
 
-// export async function getStaticProps() {
+export async function getStaticProps() {
     
-//   // get the featured post from our api
+  // get the posts from our api
 
-//   const response = await fetch(`${process.env.STRAPI_URL}/posts`);
-//   const posts = await response.json();
+  const response = await fetch(`${process.env.STRAPI_URL}/posts`);
+  const posts = await response.json();
 
-//   return {
-//       props : {
-//           posts: posts.sort(sortByDate)
-//       }
-//   }
-// }
+  return {
+      props : {
+          posts: posts.sort(sortByDate)
+      }
+  }
+}
