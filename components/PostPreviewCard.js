@@ -18,7 +18,7 @@ const PostPreviewCard = ({ post }) => {
         <div className={styles.blog}>
             <div className={styles['cover-image']}>
 
-                <Link href={`/${post.Slug}`}>
+                <Link href={`blog/${post.Slug}`}>
                     <a>
                         <Image
                             className={styles.cover}
@@ -41,7 +41,7 @@ const PostPreviewCard = ({ post }) => {
             </div>
             <div className={styles.content}>
 
-                <Link href={`/${post.Slug}`}><a className={styles.title}>{post.Title}</a></Link>
+                <Link href={`blog/${post.Slug}`}><a className={styles.title}>{post.Title}</a></Link>
 
                 <ul className={styles.tags}>
                     {tags.map((tag, index) => (
