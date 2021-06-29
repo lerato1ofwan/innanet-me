@@ -4,7 +4,7 @@ import CountdownTimer from '../components/CountdownTimer'
 import Hero from '../components/Hero'
 import Featured from '../components/Featured'
 import Blogs from '../components/Blogs'
-import { isInDev } from '../src/GeneralHelpers'
+import { isInDev, sortByDate } from '../src/GeneralHelpers'
 
 export default function Home({posts}) {
 
@@ -42,7 +42,7 @@ export default function Home({posts}) {
 
 //   return {
 //       props : {
-//           posts
+//           posts: posts.sort(sortByDate)
 //       }
 //   }
 // }
