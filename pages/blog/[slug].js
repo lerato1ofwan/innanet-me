@@ -1,10 +1,15 @@
+import marked from "marked";
+import Link from 'next/link'
+
 const BlogPost = ({ post }) => {
-    
-    console.log(post)
+    const {Title} = post;
+    const content = marked(post.Content);
 
     return ( 
         <div>
-            {post.Content}
+            <h1>{Title}</h1>
+
+            <div dangerouslySetInnerHTML={{__html: content}}></div>
         </div>
      );
 }
