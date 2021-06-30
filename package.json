@@ -8,7 +8,6 @@
     "start": "next start"
   },
   "dependencies": {
-    "marked": "^2.1.3",
     "next": "11.0.0",
     "react": "17.0.2",
     "react-countdown": "^2.3.2",
