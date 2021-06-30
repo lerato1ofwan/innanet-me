@@ -1,15 +1,40 @@
-import marked from "marked";
-import Link from 'next/link'
+import { serialize } from 'next-mdx-remote/serialize'
+import { MDXRemote } from 'next-mdx-remote'
+import styles from '../../styles/BlogPost.module.scss'
 
-const BlogPost = ({ post }) => {
+const BlogPost = ({ post, content }) => {
     const {Title} = post;
-    const content = marked(post.Content);
+
+    const LinkTag = props => <a target="_blank" href={props.href} rel="noopener noreferrer">{props.children}</a>
+
+    const Qoute = props => {
+        return (
+            <div className={styles.quote}>
+                <p>
+                    {props.children.props.children[0]}
+                </p>
+                <a target="_blank" href={props.children.props.children[1].props.href} rel="noopener noreferrer">
+                    {props.children.props.children[1].props.children}
+                </a>
+            </div>
+        )
+    }
+
+    const components = {
+        a: LinkTag,
+        blockquote: Qoute
+      }
 
     return ( 
-        <div>
-            <h1>{Title}</h1>
+        <div className={styles.container}>
+            <div className={styles['blog-post-content']}>
+                <h1>{Title}</h1>
 
-            <div dangerouslySetInnerHTML={{__html: content}}></div>
+                <div className="wrapper">
+                    <MDXRemote {...content} components={components}/>
+                </div>
+              
+            </div>
         </div>
      );
 }
@@ -34,10 +59,14 @@ export async function getStaticProps({ params: { slug } }) {
     
     const response = await fetch(`${process.env.STRAPI_URL}/posts?Slug=${slug}`);
     const posts = await response.json();
+    const post = posts[0];
+
+    const content = await serialize(post.Content);
   
     return {
         props: { 
-            post: posts[0]
+            post,
+            content
         },
         revalidate: 1000,
     };
