@@ -1,0 +1,41 @@
+.author {
+    margin-top: 3rem;
+    border-top: 1px solid rgb(230, 227, 227);
+    position: absolute;
+    bottom: 0;
+    font-size: 0.75rem;
+    display: flex;
+    padding: .5rem 0;
+    width: 90%;
+
+    .avatar {
+        align-self: center;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    .info {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        
+        p {
+            margin-left: 1.5rem;
+            font-weight: 500;
+            align-items: center;
+        }
+    
+        .date {
+            font-size: 0.65rem;
+            align-self: center;
+        }
+
+        .save{
+            align-self: center;
+        }
+    }
+}
+
+.bookmark:hover {
+    opacity: 0.5;
+}
