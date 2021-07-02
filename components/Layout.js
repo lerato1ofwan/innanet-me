@@ -5,12 +5,14 @@ import { isInDev } from "../src/GeneralHelpers"
 
 const Layout = ({ children }) => {
 
+    const isHome = children.type.name.toLowerCase() == "home";
+
     return (
         <div className={styles.content}>
 
         { isInDev() ? 
             <div></div> :
-            <Navbar />
+            <Navbar isHome={isHome}/>
         }
             {children}
 

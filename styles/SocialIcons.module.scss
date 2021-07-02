@@ -1,16 +1,28 @@
 .social-links {
     flex: 1;
     align-self: center;
-    margin-right: 3rem;
+    padding-right: 3rem;
+    height: 9vh;
 
     ul {
         display: flex;
-        justify-content: space-around;
+        justify-content: space-evenly;
 
         li {
             list-style: none;
         }
     }
+}
+
+.false {
+    background-color: var(--dark-primary);
+    img {
+        filter: invert(100%);
+    }
+}
+
+.icon:hover {
+    opacity: 0.5;
 }
 
 @media screen and (max-width: 768px) { 

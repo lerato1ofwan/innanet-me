@@ -1,9 +1,9 @@
 import styles from '../styles/Navbar.module.scss'
 import Link from 'next/link'
-import Image from 'next/image'
 import SocialIcons from './SocialIcons'
 
-const Navbar = () => {
+const Navbar = ({ isHome }) => {
+  
     return ( 
         <div className={styles.navbar}>
 
@@ -37,7 +37,7 @@ const Navbar = () => {
                 </nav>
             </div>
 
-            <SocialIcons />
+            <SocialIcons isHome={isHome} />
             
         </div>
     );
