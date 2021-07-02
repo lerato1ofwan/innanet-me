@@ -1,12 +1,16 @@
 import Head from 'next/head'
-import styles from '../styles/Home.module.scss'
 import CountdownTimer from '../components/CountdownTimer'
 import Hero from '../components/Hero'
 import Featured from '../components/Featured'
 import Blogs from '../components/Blogs'
 import { isInDev, sortByDate } from '../src/GeneralHelpers'
+import Router from "next/router";
 
-export default function Home({posts}) {
+export default function Home({posts, fromCountdown}) {
+
+  if(fromCountdown){
+    Router.reload();
+  }
 
   return (
     <div>
@@ -15,13 +19,9 @@ export default function Home({posts}) {
           <link rel="icon" href="/logo.svg" />
         </Head>
 
-      { isInDev() ? 
-        <div className={styles['launch-container']}>
-          <div className={styles['launch-content']}>
-            <h1>Innanet → me [Personal Website]</h1>
+        { isInDev() ? 
             <CountdownTimer />
-          </div>
-        </div> :
+          :
         <div>
           <Hero />
           <Featured post={posts.find(post => post.Featured)}/>

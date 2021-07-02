@@ -1,3 +1,14 @@
+.launch-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.launch-content {
+    text-align: center;
+}
+
 .days{
     grid-area: days;
 }

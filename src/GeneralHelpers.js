@@ -6,6 +6,10 @@ export const isInDev = () =>{
     return inDev < launchDate;
 }
 
+export const getLaunchDate = () => {
+    return new Date('2021-07-10T12:00:00')
+}
+
 export const blurDataUrl = () =>{
     const data = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAAYSURBVBhXY2RgYPgPxGDABKXBAInDwAAAI3kBBSpozL8AAAAASUVORK5CYII=";
     return data;
