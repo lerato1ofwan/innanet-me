@@ -1,6 +1,7 @@
 import { serialize } from 'next-mdx-remote/serialize'
 import { MDXRemote } from 'next-mdx-remote'
 import styles from '../../styles/BlogPost.module.scss'
+import { useRouter } from 'next/router'
 
 const BlogPost = ({ post, content }) => {
     const {Title} = post;
@@ -32,6 +33,12 @@ const BlogPost = ({ post, content }) => {
         blockquote: Qoute
       }
 
+      const router = useRouter()
+    
+      if (router.isFallback) {
+          return <div>Loading...</div>
+      }
+
     return ( 
         <div className={styles.container}>
             <div className={styles['blog-post-content']}>
@@ -58,7 +65,7 @@ export async function getStaticPaths() {
                 slug: blogPost.Slug,
             },
         })),
-        fallback: false,
+        fallback: true,
     };
 }
 
