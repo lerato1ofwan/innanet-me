@@ -2,23 +2,21 @@ import styles from '../styles/PostPreviewCard.module.scss'
 import Link from 'next/link';
 import Image from 'next/image';
 import { getStrapiMedia } from '../src/media';
-import { blurDataUrl, getDate } from '../src/GeneralHelpers';
+import { blurDataUrl } from '../src/GeneralHelpers';
+import Author from './Author';
 
 const PostPreviewCard = ({ post }) => {
 
     const tags = post.Tags.split(',');
-    const date = getDate(post.PublishedDate);
 
     const imageUrl = getStrapiMedia(post.Cover);
     const img = post.Cover.formats.medium;
-
-    const profileImageUrl = getStrapiMedia(post.author.ProfileImage);
     
     return ( 
         <div className={styles.blog}>
             <div className={styles['cover-image']}>
 
-                <Link href={`blog/${post.Slug}`}>
+                <Link href={`/blog/${post.Slug}`}>
                     <a>
                         <Image
                             className={styles.cover}
@@ -41,7 +39,7 @@ const PostPreviewCard = ({ post }) => {
             </div>
             <div className={styles.content}>
 
-                <Link href={`blog/${post.Slug}`}><a className={styles.title}>{post.Title}</a></Link>
+                <Link href={`/blog/${post.Slug}`}><a className={styles.title}>{post.Title}</a></Link>
 
                 <ul className={styles.tags}>
                     {tags.map((tag, index) => (
@@ -57,19 +55,7 @@ const PostPreviewCard = ({ post }) => {
                     {post.Subtitle}
                 </p>
 
-                <div className={styles.author}>
-                    <img
-                        className={styles.avatar}
-                        src={profileImageUrl}
-                        alt={`Cover Image for ${post.Title}`}
-                        width={50}
-                        height={50}
-                    />
-                    <div>
-                        <p>{post.author.Name}</p>
-                        <p className={styles.date}><span>On </span>{date}</p>
-                    </div>
-                </div>
+                <Author post={post} withSave={true}/>
             </div>
         </div>
      );

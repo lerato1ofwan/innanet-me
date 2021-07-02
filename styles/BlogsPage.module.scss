@@ -1,0 +1,23 @@
+.container {
+    width: 90%;
+    margin: 0 auto;
+
+    h1 {
+        padding: 3rem 0 1.5rem 0;
+    }
+
+    .blogs {
+        display: flex;
+        border-top: 0.05rem solid var(--accent-primary);
+        padding-top: 1.5rem;
+
+        ul {
+            list-style: none;
+
+            li {
+                width: 75%;
+                margin: 0 auto;
+            }
+        }
+    }
+}

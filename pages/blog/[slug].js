@@ -10,12 +10,19 @@ const BlogPost = ({ post, content }) => {
     const Qoute = props => {
         return (
             <div className={styles.quote}>
-                <p>
-                    {props.children.props.children[0]}
-                </p>
-                <a target="_blank" href={props.children.props.children[1].props.href} rel="noopener noreferrer">
-                    {props.children.props.children[1].props.children}
-                </a>
+                {!Array.isArray(props.children.props.children) ? 
+                    <p>
+                        {props.children.props.children}
+                    </p> :
+                    <div>
+                        <p>
+                            {props.children.props.children[0]}
+                        </p>
+                        <a target="_blank" href={props.children.props.children[1].props.href} rel="noopener noreferrer">
+                            {props.children.props.children[1].props.children}
+                        </a>
+                    </div>
+                }
             </div>
         )
     }
