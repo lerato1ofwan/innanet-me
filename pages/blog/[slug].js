@@ -33,11 +33,11 @@ const BlogPost = ({ post, content }) => {
         blockquote: Qoute
       }
 
-      const router = useRouter()
-    
-      if (router.isFallback) {
-          return <div>Loading...</div>
-      }
+    const router = useRouter();
+
+    if (router.isFallback) {
+        return <div>Loading...</div>
+    }
 
     return ( 
         <div className={styles.container}>
@@ -65,7 +65,7 @@ export async function getStaticPaths() {
                 slug: blogPost.Slug,
             },
         })),
-        fallback: true,
+        fallback: false,
     };
 }
 
