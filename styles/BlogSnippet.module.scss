@@ -1,0 +1,30 @@
+.snippet {
+    display: flex;
+    margin-bottom: 1.75rem;
+
+    .info {
+        padding-left: 1rem;
+        position: relative;
+
+        .title {
+            display: block; 
+            font-size: 1.17em; 
+            margin-bottom: 1rem; 
+            font-weight: bold;
+        }
+    
+        .subtitle {
+            word-wrap: break-word;
+            margin: 0;
+        }
+    }
+}
+
+.snippet:hover {
+    box-shadow: 0 0.4rem 2rem rgba(34, 68, 123, 0.2);
+    cursor: pointer;
+}
+
+.title:hover, .info p:hover {
+    opacity: 0.7;
+}
