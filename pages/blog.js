@@ -1,11 +1,15 @@
 import styles from '../styles/BlogsPage.module.scss'
 import { sortByDate } from '../src/GeneralHelpers';
 import BlogSnippet from '../components/BlogSnippet';
+import Head from 'next/head';
 
 const Blog = ({ posts }) => {
     
     return ( 
         <div className={styles.container}>
+            <Head>
+                <title>Lerato Letsepe | Blog</title>
+            </Head>
 
                 <h1>Blogs</h1>
 
