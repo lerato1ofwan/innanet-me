@@ -1,32 +1,16 @@
-import { serialize } from 'next-mdx-remote/serialize'
-import { MDXRemote } from 'next-mdx-remote'
-import styles from '../../styles/BlogPost.module.scss'
-import { useRouter } from 'next/router'
+import Image from 'next/image';
+import save from '../../public/icons/save.svg';
+import styles from '../../styles/BlogPost.module.scss';
+import { useRouter } from 'next/router';
+import { MDXRemote } from 'next-mdx-remote';
+import { LinkTag, Qoute } from '../../components/MarkdownComponents';
+import { getStrapiMedia } from '../../src/media';
+import { getDate } from '../../src/GeneralHelpers';
+import { serialize } from 'next-mdx-remote/serialize';
+import back from '../../public/icons/back.svg'
 
 const BlogPost = ({ post, content }) => {
-    const {Title} = post;
-
-    const LinkTag = props => <a target="_blank" href={props.href} rel="noopener noreferrer">{props.children}</a>
-
-    const Qoute = props => {
-        return (
-            <div className={styles.quote}>
-                {!Array.isArray(props.children.props.children) ? 
-                    <p>
-                        {props.children.props.children}
-                    </p> :
-                    <div>
-                        <p>
-                            {props.children.props.children[0]}
-                        </p>
-                        <a target="_blank" href={props.children.props.children[1].props.href} rel="noopener noreferrer">
-                            {props.children.props.children[1].props.children}
-                        </a>
-                    </div>
-                }
-            </div>
-        )
-    }
+    const { Title } = post;
 
     const components = {
         a: LinkTag,
@@ -39,12 +23,45 @@ const BlogPost = ({ post, content }) => {
         return <div>Loading...</div>
     }
 
+    const date = getDate(post.PublishedDate);
+    const profileImageUrl = getStrapiMedia(post.author.ProfileImage);
+
     return ( 
         <div className={styles.container}>
+            <div className={styles.back}>
+                <Image className={styles.back} src={back} alt="back button arrow" width={20} height={15}/>
+                <span>Back to blogs</span>
+            </div>
             <div className={styles['blog-post-content']}>
                 <h1>{Title}</h1>
 
-                <div className="wrapper">
+                <div className={styles.info}>
+                   
+                    <div className={styles.author}>
+                        <img
+                            className={styles.avatar}
+                            src={profileImageUrl}
+                            alt={`Cover Image for ${post.Title}`}
+                            width={35}
+                            height={35}
+                        />
+                        <div>
+                            <p>{post.author.Name}</p>
+                            <p className={styles.date}><span>On </span>{date}</p>
+                        </div>
+                    </div>
+
+                    <div className={styles.share}>
+                        <ul>
+                            <li><a target="_blank" href={`http://twitter.com/share?text=🚀Check you this amazing blog post by @lerato1ofone 😃🔌&url=${process.env.NEXT_PUBLIC_HOST}/${post.Slug}`} rel="noopener noreferrer"><img className={styles.social} src="/icons/twitter.svg" alt="twitter" width="25" height="25"/></a></li>
+                            <li><a target="_blank" href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(`${process.env.NEXT_PUBLIC_HOST}/${post.Slug}`)}`} rel="noopener noreferrer"><img className={styles.social} src="/icons/linkedin.svg" alt="linkedin" width="25" height="25"/></a></li>
+                            <li><Image className={styles.bookmark} src={save} alt="save" width={20} height={20}/></li>
+                        </ul>
+                    </div>
+              
+                </div>
+
+                <div className={styles.wrapper}>
                     <MDXRemote {...content} components={components}/>
                 </div>
               
@@ -70,7 +87,6 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params: { slug } }) {
-    
     const response = await fetch(`${process.env.STRAPI_URL}/posts?Slug=${slug}`);
     const posts = await response.json();
     const post = posts[0];
