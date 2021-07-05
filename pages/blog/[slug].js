@@ -28,7 +28,7 @@ const BlogPost = ({ post, content }) => {
 
     return ( 
         <div className={styles.container}>
-            <div className={styles.back}>
+            <div className={styles.back} onClick={(e) => router.push('/blog')}>
                 <Image className={styles.back} src={back} alt="back button arrow" width={20} height={15}/>
                 <span>Back to blogs</span>
             </div>
