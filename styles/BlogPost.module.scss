@@ -1,21 +1,107 @@
+.back {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.85rem;
+    max-width: 10rem;
+    padding: 1rem 0 0 1rem;
+    margin-left: 3rem;
+    span {
+        text-transform: uppercase;
+    }
+}
+
+.back:hover {
+    cursor: pointer;
+    color: var(--dark-secondary);
+    opacity: 0.8;
+}
+
 .blog-post-content {
     width: 700px;
     margin: 0 auto;
-}
+    padding-top: 3rem;
 
-.quote{
-    display: flex;
-    flex-direction: column;
-    font-style: italic;
-    box-shadow: rgb(41, 41, 41) 3px 0px 0px 0px inset;
-    padding-left: 1.5rem;
+    .info {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 1.5rem;
 
-    p {
-        margin-bottom: 0.25rem;
+        .share {
+            display: flex;
+            align-items: center;
+            
+            ul {
+                list-style: none;
+                margin: 0;
+                padding-left: 0;
+                display: flex;
+                
+                li {
+                    padding-right: 1.5rem;
+                }
+            }
+
+        }
+
+        .author {
+            font-size: 0.75rem;
+            display: flex;
+
+            p {
+                padding-left: .5rem;
+                margin: .25rem 0;
+            }
+
+            .avatar {
+                align-self: center;
+                border-radius: 50%;
+                object-fit: cover;
+              }
+        }
     }
 
-    a {
-        color: var(--btn-primary);
-        font-weight: 500;
+    .quote {
+        display: flex;
+        flex-direction: column;
+        font-style: italic;
+        box-shadow: rgb(41, 41, 41) 3px 0px 0px 0px inset;
+        padding-left: 1.5rem;
+    
+        p {
+            margin-bottom: 0.25rem;
+        }
+    
+        a {
+            color: var(--btn-primary);
+            font-weight: 500;
+        }
+    }
+}
+
+@media screen and (max-width: 1020px) {
+    .back {
+        margin-left: 2rem;
+        margin-left: 3rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .back {
+        padding: 1rem 0 0 1rem;
+        margin-left: 0;
+    }
+
+    .blog-post-content {
+        width: auto;
+        margin: 0 auto;
+        width: 85%;
+
+        .wrapper {
+            img {
+               width: 100%;
+            }
+        }
+
     }
 }
