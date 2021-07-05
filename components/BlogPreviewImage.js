@@ -12,8 +12,8 @@ const BlogPreviewImage = ({ post }) => {
         <img
             src={imageUrl}
             alt={`Cover Image for ${post.Title}`}
-            width={284}
-            height={206}
+            width={310}
+            height={250}
             placeholder='blur'
             blurDataUrl={blurDataUrl()}
         />
