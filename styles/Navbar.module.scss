@@ -12,6 +12,7 @@
             align-self: center;
             padding: 0 1.5rem;
             margin-left: 3rem;
+            transition: 0.2s ease;
         }
 
         nav {
@@ -25,9 +26,9 @@
 
                     .collab {
                         background-color: var(--accent-secondary);
-                        padding: .5rem;
-                        color: #6E00FF;
-                        font-weight: 600;
+                        padding: .4rem .6rem;
+                        color: #862ff7;
+                        font-weight: 500;
                         border-radius: 1rem;
                     }
                 }
@@ -54,6 +55,19 @@
             }
         }
     }
+}
+
+.nav-link {
+    transition: all .3s ease-in-out; 
+}
+
+.logo:hover {
+    cursor: pointer;
+    filter: invert(50%);
+}
+
+.nav-link:hover {
+    opacity: 0.5;
 }
 
 @media screen and (max-width: 768px) { 

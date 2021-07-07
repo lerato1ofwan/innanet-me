@@ -24,9 +24,9 @@ const Navbar = ({ isHome }) => {
                 </div>
                 <nav>
                     <ul>
-                        <li><Link href="/blog"><a>Blog</a></Link></li>
-                        <li><Link href="/about"><a>About</a></Link></li>
-                        <li><Link href="/collaborate-with-me"><a className={styles.collab}>Collaborate</a></Link></li>
+                        <li><Link href="/blog"><a className={styles['nav-link']}>Blog</a></Link></li>
+                        <li><Link href="/about" ><a className={styles['nav-link']}>About</a></Link></li>
+                        <li><Link href="/contact"><a className={`${styles[`nav-link`]} ${styles.collab}`}>Collaborate</a></Link></li>
                     </ul>
 
                     <div className={styles.burger}>
