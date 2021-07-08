@@ -1,0 +1,153 @@
+.container {
+    padding: 5rem;
+
+    .content {
+        padding: 1rem;
+        background-color: var(--dark-secondary);
+        color: var(--light-primary);
+        height: 100%;
+        width: 80%;
+        margin: 0 auto;
+        display: flex;
+
+        h2 {
+           padding-left: 2.5rem;
+           flex: .5;
+           min-width: 12rem;
+        }
+
+        .me {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .image {
+                height: 12rem;
+                width: 12rem;
+                border-radius: 50%;
+                background: var(--light-primary);
+                margin-bottom: 1.5rem;
+            }
+
+            .info {
+                text-align: center;
+
+                h3 {
+                    letter-spacing: 0.045rem;
+
+                    span {
+                        color: var(--accent-secondary);
+                    }
+                }
+
+                p {
+                    word-spacing: 00.045rem;
+                    letter-spacing: 00.045rem;
+                }
+            }
+
+            ul {
+                display: flex;
+                justify-content: center;
+
+                li {
+                    padding: 0 1rem;
+                    list-style: none;
+
+                    a {
+                        display: block;
+                        transition: 0.3s ease-in-out;
+                        filter: invert(100%);
+                    }
+                
+                }
+            }
+        }
+
+        .resume h2 {
+            cursor: pointer;
+        }
+    }
+}
+
+.icon:hover, .resume h2:hover {
+    opacity: 0.5;
+}
+
+.container::before {
+    content: open-quote;
+    position: absolute;
+    width: 12rem;
+    height: 12rem;
+    border-radius: 50%;
+    background: var(--accent-secondary);
+    top: 1;
+    left: 1;
+    font-size: 5rem;
+}
+
+@media screen and (max-width: 900px) { 
+    .container {
+        padding: 2.5rem;
+        height: auto;
+
+        .content {
+            flex-direction: column;
+
+           .about {
+                margin-bottom: 3rem;
+                
+                h2 {
+                    padding-left: 5rem;
+                }
+            }
+
+           .resume {
+                margin-top: 3rem;
+                text-align: center;
+
+                h2 {
+                    padding-left: 0;
+                }
+            }
+       }
+    }
+
+    .container::before {
+        width: 10rem;
+        height: 10rem;
+    }
+ }
+
+ @media screen and (max-width: 600px) { 
+    .container {    
+        height: auto;
+        padding: .5rem;
+
+        .content {
+            flex-direction: column;
+
+           .about {
+               margin-bottom: 3rem;
+               
+               h2 {
+                   padding-left: 5rem;
+                }
+           }
+
+           .resume {
+               margin-top: 3rem;
+
+                h2 {
+                    padding-left: 0;
+                }
+           }
+       }
+    }
+
+    .container::before {
+        width: 8rem;
+        height: 8rem;
+    }
+ }
