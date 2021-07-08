@@ -1,6 +1,7 @@
 import styles from '../styles/Hero.module.scss'
 import Image from 'next/image'
 import Button from './Button'
+import { motion } from "framer-motion"
 
 const Hero = () => {
 
@@ -14,6 +15,8 @@ const Hero = () => {
                 <Button text="Check The Blog" type="gradient-action" link="blog"/>
                 
             </div>
+
+            <motion.div initial={{ x: 0 }} animate={{ x: -1200 }} transition={{ delay: 2, duration: 1.5 }} className={styles.overlay}></motion.div>
 
             <div className={styles['right']}>
                 <div className={styles.content}>
@@ -33,7 +36,7 @@ const Hero = () => {
                 </svg>
             </div>
             
-        </div>
+        </div> 
       );
 }
  

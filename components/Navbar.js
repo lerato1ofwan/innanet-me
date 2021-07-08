@@ -1,6 +1,8 @@
 import styles from '../styles/Navbar.module.scss'
 import Link from 'next/link'
 import SocialIcons from './SocialIcons'
+import { motion } from 'framer-motion'
+import { hidden } from 'colorette'
 
 const Navbar = ({ isHome }) => {
   
@@ -36,6 +38,8 @@ const Navbar = ({ isHome }) => {
 
                 </nav>
             </div>
+
+            <motion.div initial={{ x: 0 }} animate={{ x: -1200 }} transition={{ delay: 2, duration: 1.5 }} className={styles.overlay}></motion.div>
 
             <SocialIcons isHome={isHome} />
             

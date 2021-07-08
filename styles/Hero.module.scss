@@ -2,7 +2,7 @@
     display: flex;
     height: 88vh;
     position: relative;
-    
+
     .left {
         background-color: var(--dark-secondary); 
         flex: 3.5;
@@ -24,6 +24,16 @@
         p {
             margin-top: 1rem;
         }
+    }
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 76%;
+        z-index: 10;
+        background-color: white;
     }
 
     .right {
@@ -125,7 +135,7 @@
         .left {
             flex: 2.8;
         }
-        
+
         .right {
             flex: 1;
             margin-right: 0;
