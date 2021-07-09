@@ -1,13 +1,13 @@
-import { months } from "./services/models/Constants";
+import { months } from "./Constants";
 
 export const isInDev = () =>{
     const inDev = new Date();
-    const launchDate = new Date('July 10, 2021 12:00:00');
+    const launchDate = new Date('July 13, 2021 12:00:00');
     return inDev < launchDate;
 }
 
 export const getLaunchDate = () => {
-    return new Date('2021-07-10T12:00:00')
+    return new Date('2021-07-13T12:00:00')
 }
 
 export const blurDataUrl = () =>{
