@@ -1,6 +1,7 @@
 .snippet {
     display: flex;
     margin-bottom: 1.75rem;
+    min-height: 200px;
 
     .info {
         width: 100%;
@@ -23,13 +24,14 @@
     }
 }
 
-.snippet:hover {
-    box-shadow: 0 0.4rem 2rem rgba(34, 68, 123, 0.2);
-    cursor: pointer;
-}
-
 .title:hover, .info p:hover {
     opacity: 0.7;
+}
+
+@media screen and (max-width: 1305px) {
+    .snippet {
+        min-height: 250px;
+    }
 }
 
 @media screen and (max-width: 900px) {

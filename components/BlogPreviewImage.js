@@ -9,13 +9,14 @@ const BlogPreviewImage = ({ post }) => {
     const img = post.Cover.formats.thumbnail;
 
     return ( 
-        <img
+        <Image
+            className={styles.cover}
             src={imageUrl}
             alt={`Cover Image for ${post.Title}`}
             width={310}
             height={250}
             placeholder='blur'
-            blurDataUrl={blurDataUrl()}
+            blurDataURL={blurDataUrl()}
         />
      );
 }

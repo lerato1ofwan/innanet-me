@@ -5,7 +5,7 @@ import PageTitle from './PageTitle'
 import Button from './Button'
 import { getStrapiMedia } from "../src/media";
 import { blurDataUrl } from '../src/GeneralHelpers'
-
+import { motion } from 'framer-motion'
 
 const Featured = ({post}) => {
     const { Title, Cover, FeaturedSubtitle, Slug  } = post;
@@ -14,33 +14,44 @@ const Featured = ({post}) => {
     const img = Cover.formats.small;
 
     return ( 
-        <div className={styles.container}>
+        <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1 }}
+            className={styles.container}>
 
             <div className={styles.heading}>
                 <PageTitle text="Featured post"/>
-                <Link href="/"><a>{Title}</a></Link>
+                <Link href={`/blog/${Slug}`}><a>{Title}</a></Link>
             </div>
             
             <div className={styles.content}>
 
                 <div className={styles.left}>
                     <div dangerouslySetInnerHTML={{__html:`<p>${FeaturedSubtitle}</p>`}}></div>
-                    <Button text="Read More" type="blue-action" link={`blog/${Slug}`} />
+                    <Button text="Read More" type="blue-action" link={`/blog/${Slug}`} />
                 </div>
 
-                <div className={styles.right}>
+                <motion.div className={styles.right}
+                    whileHover={{
+                        scale: 1.1
+                    }}
+                >
+                  <Link href={`/blog/${Slug}`}>
                     <Image
-                        src={imageUrl}
-                        alt={`Cover Image for ${Title}`}
-                        width={img.width}
-                        height={img.height}
-                        placeholder="blur"
-                        blurDataURL={blurDataUrl()}
-                    />
-                </div>
+                            src={imageUrl}
+                            alt={`Cover Image for ${Title}`}
+                            width={img.width}
+                            height={img.height}
+                            placeholder="blur"
+                            blurDataURL={blurDataUrl()}
+                        />
+                  </Link>
+                    
+                </motion.div>
             
             </div>
-        </div>
+        </motion.div>
      );
 }
  
