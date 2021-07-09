@@ -13,7 +13,7 @@ const BlogPreviewImage = ({ post }) => {
             className={styles.cover}
             src={imageUrl}
             alt={`Cover Image for ${post.Title}`}
-            width={310}
+            width={340}
             height={250}
             placeholder='blur'
             blurDataURL={blurDataUrl()}
