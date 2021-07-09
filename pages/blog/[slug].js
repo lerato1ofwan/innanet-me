@@ -8,6 +8,7 @@ import { getStrapiMedia } from '../../src/media';
 import { getDate } from '../../src/GeneralHelpers';
 import { serialize } from 'next-mdx-remote/serialize';
 import back from '../../public/icons/back.svg'
+import { motion } from 'framer-motion';
 
 const BlogPost = ({ post, content }) => {
     const { Title } = post;
@@ -27,7 +28,11 @@ const BlogPost = ({ post, content }) => {
     const profileImageUrl = getStrapiMedia(post.author.ProfileImage);
 
     return ( 
-        <div className={styles.container}>
+        <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1 }}
+            className={styles.container}>
             <div className={styles.back} onClick={(e) => router.push('/blog')}>
                 <Image className={styles.back} src={back} alt="back button arrow" width={20} height={15}/>
                 <span>Back to blogs</span>
@@ -66,7 +71,7 @@ const BlogPost = ({ post, content }) => {
                 </div>
               
             </div>
-        </div>
+        </motion.div>
      );
 }
  
