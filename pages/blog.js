@@ -7,10 +7,10 @@ import { motion } from 'framer-motion';
 const Blog = ({ posts }) => {
     
     return ( 
-        <motion.div 
-            className={styles.container}
+        <motion.div className={styles.container}
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0 }}
             transition={{ delay: 0.5 }}>
             <Head>
                 <title>Lerato Letsepe | The Blog</title>

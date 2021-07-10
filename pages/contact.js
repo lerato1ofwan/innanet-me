@@ -1,10 +1,21 @@
 import styles from '../styles/Contact.module.scss';
 import Image from 'next/image';
 import handshake from '../public/icons/handshake.svg'
+import Head from 'next/head';
+import { motion } from 'framer-motion';
 
 const Contact = () => {
     return ( 
-        <div className={styles.container}>
+        <motion.div className={styles.container}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+        >
+             <Head>
+                <title>Lerato Letsepe | Collab</title>
+                <link rel="icon" href="/logo.svg" />
+            </Head>
+
             <div className={styles.content}>
                 <h1>Get in touch!</h1>
                 <p>Let's work on something together.</p>
@@ -36,7 +47,7 @@ const Contact = () => {
                     </form>
                 </div>
             </div>
-        </div>
+        </motion.div>
      );
 }
  

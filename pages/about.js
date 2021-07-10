@@ -3,10 +3,15 @@ import Image from 'next/image'
 import Link from 'next/link'
 import styles from '../styles/About.module.scss'
 import SocialIcons from '../components/SocialIcons'
+import { motion } from 'framer-motion';
 
 const About = () => {
     return ( 
-        <div className={styles.container}>
+        <motion.div className={styles.container}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0}}
+        >
             <Head>
                 <title>Lerato Letsepe | About</title>
                 <link rel="icon" href="/logo.svg" />
@@ -37,7 +42,7 @@ const About = () => {
                     <Link href="/resume"><h2 className={styles['nav-link']}>Get my resume <span>→</span> </h2></Link>
                 </div>
             </div>
-        </div>
+        </motion.div>
      );
 }
  

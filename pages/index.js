@@ -5,6 +5,7 @@ import Featured from '../components/Featured'
 import Blogs from '../components/Blogs'
 import { isInDev, sortByDate } from '../src/GeneralHelpers'
 import Router from "next/router";
+import { motion } from 'framer-motion'
 
 export default function Home({posts, fromCountdown}) {
 
@@ -13,7 +14,14 @@ export default function Home({posts, fromCountdown}) {
   }
 
   return (
-    <div>
+    <motion.div
+        initial={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ 
+           ease: 'easeOut',
+           duration: 1
+        }}
+        >
         <Head>
           <title>Lerato Letsepe | Home</title>
           <link rel="icon" href="/logo.svg" />
@@ -22,14 +30,14 @@ export default function Home({posts, fromCountdown}) {
         { isInDev() ? 
             <CountdownTimer />
           :
-        <div>
+          <div>
           <Hero />
           <Featured post={posts.find(post => post.Featured)}/>
           <Blogs posts={posts.length > 8 ? posts.slice(0, 8) : posts} />
         </div>
       }
       
-    </div>
+    </motion.div>
   )
 }
 
