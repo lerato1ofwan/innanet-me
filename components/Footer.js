@@ -1,11 +1,18 @@
 import styles from '../styles/Footer.module.scss'
 import Link from 'next/link'
 import Image from 'next/image'
+import { motion } from 'framer-motion'
 
 const Footer = () => {
     return ( 
         <footer className={styles.footer}>
-            <div className={styles.content}>
+            <motion.div className={styles.content}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{
+                    duration: 0.6
+                }}
+            >
                 
                 <div className={styles.heading}>
                     <h2>What's cutting?</h2>
@@ -46,7 +53,7 @@ const Footer = () => {
                     </div>
 
                 </div>
-            </div>
+            </motion.div>
 
             <div className={styles.copyright}>
                 <p>Designed & Developed with <span>💙</span> by Lerato Letsepe</p>
