@@ -61,21 +61,21 @@
                     justify-content: space-between;
 
                     .input-field {
-                        width: 90%;
                         padding: 0.6rem;
                         margin: .5rem 0rem;
                         border-radius: .65rem;
                         border: 2px solid var(--accent-primary);
                         color: var(--dark-primary);
+                        width: 15rem;
                     }
     
                     .message-input-field {
-                        width: 100%;
                         padding: 0.8rem;
                         margin: .2rem 0rem;
                         border-radius: .65rem;
                         border: 2px solid var(--accent-primary);
                         color: var(--dark-primary);
+                        width: 15rem;
                     }
                 }
 
@@ -109,6 +109,30 @@
 .send:hover {
     cursor: pointer;
     opacity: 0.5;
+}
+
+@media screen and (max-width: 1200px) { 
+    .input-field {
+        max-width: 11rem;
+        width: auto;
+    }
+
+    .message-input-field {
+        max-width: 11rem;
+        width: auto;
+    }
+}
+
+@media screen and (max-width: 900px) { 
+    .input-field {
+        max-width: 9rem;
+        width: auto;
+    }
+
+    .message-input-field {
+        max-width: 9rem;
+        width: auto;
+    }
 }
 
 @media screen and (max-width: 768px) { 
