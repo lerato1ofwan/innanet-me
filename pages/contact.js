@@ -3,6 +3,7 @@ import Image from 'next/image';
 import handshake from '../public/icons/handshake.svg'
 import Head from 'next/head';
 import { motion } from 'framer-motion';
+import { easing, fadeInUp } from '../src/Motions';
 
 const Contact = () => {
     return ( 
@@ -17,13 +18,25 @@ const Contact = () => {
             </Head>
 
             <div className={styles.content}>
-                <h1>Get in touch!</h1>
-                <p>Let's work on something together.</p>
+                <motion.h1
+                    variants={fadeInUp}
+                    initial='initial'
+                    animate='animate'
+                >Get in touch!</motion.h1>
+                <motion.p
+                    variants={fadeInUp}
+                    initial='initial'
+                    animate='animate'
+                >Let's work on something together.</motion.p>
 
-                <div className={styles.handshake}>
+                <motion.div className={styles.handshake}
+                    variants={fadeInUp}
+                    initial='initial'
+                    animate='animate'
+                >
                     <Image src={handshake} />
                     <p>Collaborate with me</p>
-                </div>
+                </motion.div>
 
 
                 <div className={styles.form}>

@@ -4,6 +4,7 @@ import Link from 'next/link'
 import styles from '../styles/About.module.scss'
 import SocialIcons from '../components/SocialIcons'
 import { motion } from 'framer-motion';
+import { easing, fadeInUp } from '../src/Motions';
 
 const About = () => {
     return ( 
@@ -22,9 +23,13 @@ const About = () => {
                 </div>
 
                 <div className={styles.me}>
-                    <div className={styles.image}>
+                    <motion.div className={styles.image}
+                        variants={fadeInUp}
+                        initial='initial'
+                        animate='animate'
+                    >
                         
-                    </div>
+                    </motion.div>
                     <div className={styles.info}>
                         <h1>Hey there!</h1>
                         <h3>My name is <span>Lerato Letsepe</span></h3>
