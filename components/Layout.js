@@ -2,10 +2,13 @@ import Footer from "./Footer"
 import Navbar from "./Navbar"
 import styles from '../styles/Layout.module.scss'
 import { isInDev } from "../src/GeneralHelpers"
+import { useRouter } from 'next/router'
 
-const Layout = ({ children }) => {
+const Layout = ({ children, route }) => {
 
-    const isHome = children.type.name.toLowerCase() == "home";
+    const router = useRouter()
+
+    const isHome = router.route.toLowerCase() == "/" || router.route.toLowerCase() == "/#";
 
     return (
         <div className={styles.content}>
