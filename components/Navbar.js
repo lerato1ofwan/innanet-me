@@ -2,7 +2,6 @@ import styles from '../styles/Navbar.module.scss'
 import Link from 'next/link'
 import SocialIcons from './SocialIcons'
 import { motion } from 'framer-motion'
-import { hidden } from 'colorette'
 
 const Navbar = ({ isHome }) => {
   
