@@ -87,7 +87,7 @@ export async function getStaticPaths() {
                 slug: blogPost.Slug,
             },
         })),
-        fallback: false,
+        fallback: true,
     };
 }
 
