@@ -1,0 +1,184 @@
+.footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: var(--dark-primary);
+}
+
+.footer .content {
+  width: 90%;
+  height: 100%;
+  margin: 0 auto;
+  margin-bottom: 3rem;
+}
+
+.footer .content h2 {
+  color: var(--accent-secondary);
+  margin: 0;
+}
+
+.footer .content .heading {
+  padding: 5rem 0 0 0;
+}
+
+.footer .content .heading p {
+  color: var(--light-primary);
+  width: 60%;
+}
+
+.footer .content .reach-out {
+  margin-top: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.footer .content .reach-out h2 {
+  margin-bottom: 1.5rem;
+}
+
+.footer .content .reach-out .left {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.footer .content .reach-out .left .hire-me {
+  text-align: center;
+  display: block;
+  padding: 0.8rem 1rem;
+  border: none;
+  border-radius: 1.2rem;
+  outline: none;
+  color: var(--light-primary);
+  font-weight: bold;
+  background: #8c41ee;
+  letter-spacing: 0.025rem;
+  width: 8rem;
+  font-size: 0.85rem;
+}
+
+.footer .content .reach-out .left .connect {
+  margin-top: 3rem;
+}
+
+.footer .content .reach-out .left .socials {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  padding-left: 0;
+}
+
+.footer .content .reach-out .left .socials li {
+  margin-right: 2rem;
+  list-style: none;
+}
+
+.footer .content .reach-out .left .socials li img {
+  -webkit-filter: invert(90%);
+          filter: invert(90%);
+}
+
+.footer .content .reach-out .right {
+  -webkit-box-flex: .8;
+      -ms-flex: .8;
+          flex: .8;
+}
+
+.footer .content .reach-out .right h2 .hi {
+  margin-left: 1rem;
+  visibility: hidden;
+}
+
+.footer .content .reach-out .right .input-field {
+  width: 100%;
+  padding: 0.8rem;
+  margin: .2rem 0rem;
+}
+
+.footer .content .reach-out .right .message-input-field {
+  height: 8rem;
+  width: 100%;
+  padding: 0.8rem;
+  margin: .2rem 0rem;
+}
+
+.footer .content .reach-out .right .send {
+  margin-top: 0.5rem;
+  display: block;
+  padding: 0.5rem 0.5rem;
+  border: none;
+  border-radius: .75rem;
+  outline: none;
+  color: black;
+  font-weight: bold;
+  background: var(--light-primary);
+  letter-spacing: 0.025rem;
+  width: 6rem;
+  font-size: 0.85rem;
+}
+
+.footer .copyright {
+  border-top: 1.5px solid #b39fb0;
+  padding: .5rem;
+  font-size: 0.75rem;
+  text-align: center;
+}
+
+.footer .copyright p {
+  color: #b39fb0;
+  letter-spacing: 0.025rem;
+  margin: .25rem 0;
+}
+
+@media screen and (max-width: 900px) {
+  .footer {
+    height: auto;
+  }
+  .footer .content h2 {
+    font-size: 1.35rem;
+  }
+  .footer .content p {
+    font-size: .875rem;
+  }
+  .footer .content .heading p {
+    width: 100%;
+  }
+  .footer .content .right h2 .hi {
+    visibility: visible !important;
+  }
+  .footer .copyright {
+    font-size: 0.675rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .footer .reach-out {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .footer .right {
+    margin-top: 1.5rem;
+  }
+  .footer .right .submit {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+/*# sourceMappingURL=Footer.module.css.map */

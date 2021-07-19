@@ -1,0 +1,116 @@
+.navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 9vh;
+  position: relative;
+}
+
+.navbar .header {
+  background-color: var(--dark-primary);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-flex: 3.5;
+      -ms-flex: 3.5;
+          flex: 3.5;
+}
+
+.navbar .header .logo, .navbar .header nav {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  padding: 0 1.5rem;
+  margin-left: 3rem;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+}
+
+.navbar .header nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.navbar .header nav ul li {
+  color: var(--light-primary);
+  margin-left: 1.5rem;
+  list-style: none;
+}
+
+.navbar .header nav ul li .collab {
+  background-color: var(--accent-secondary);
+  padding: .4rem .6rem;
+  color: #862ff7;
+  font-weight: 500;
+  border-radius: 1rem;
+}
+
+.navbar .header nav .burger {
+  display: none;
+}
+
+.navbar .header nav .line1 {
+  width: 2.5rem;
+  height: 0.2rem;
+  margin: 0.4rem;
+  background: var(--light-secondary);
+  pointer-events: none;
+}
+
+.navbar .header nav .line2 {
+  width: 1.5rem;
+  height: 0.2rem;
+  margin: 0.4rem;
+  background: var(--light-secondary);
+  pointer-events: none;
+}
+
+.navbar .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 76%;
+  z-index: 10;
+  background-color: white;
+}
+
+.nav-link {
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.logo:hover {
+  cursor: pointer;
+  -webkit-filter: invert(50%);
+          filter: invert(50%);
+}
+
+.nav-link:hover {
+  opacity: 0.5;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar .header {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
+  .navbar .header .logo, .navbar .header nav {
+    margin: 0;
+  }
+  .navbar .header nav ul {
+    display: none;
+  }
+  .navbar .header nav .burger {
+    display: block;
+    cursor: pointer;
+  }
+}
+/*# sourceMappingURL=Navbar.module.css.map */

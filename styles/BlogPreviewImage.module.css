@@ -1,0 +1,8 @@
+.cover {
+  -o-object-fit: cover;
+     object-fit: cover;
+  min-height: 250px;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+/*# sourceMappingURL=BlogPreviewImage.module.css.map */

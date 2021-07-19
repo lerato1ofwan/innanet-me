@@ -1,0 +1,64 @@
+.launch-container {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.launch-content {
+  text-align: center;
+}
+
+.days {
+  grid-area: days;
+}
+
+.hours {
+  grid-area: hours;
+}
+
+.minutes {
+  grid-area: minutes;
+}
+
+.seconds {
+  grid-area: seconds;
+}
+
+.countdown {
+  letter-spacing: .2rem;
+  width: 100%;
+  margin: 0 auto;
+  display: -ms-grid;
+  display: grid;
+  grid-template: 'days hours minutes seconds';
+}
+
+.time {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.time .time-value {
+  font-size: 1.5rem;
+}
+
+@media screen and (max-width: 900px) {
+  .countdown {
+    grid-gap: .5rem;
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+/*# sourceMappingURL=CountdownTimer.module.css.map */

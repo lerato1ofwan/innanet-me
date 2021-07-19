@@ -1,0 +1,19 @@
+.cursor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3.5rem;
+  height: 3.5rem;
+  border: 2px solid white;
+  border-radius: 100%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transition-duration: 100ms;
+  transition-duration: 100ms;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+  will-change: width, height, transform, border;
+  z-index: 999;
+  pointer-events: none;
+}
+/*# sourceMappingURL=CustomCursor.module.css.map */

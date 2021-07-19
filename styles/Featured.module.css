@@ -1,0 +1,146 @@
+.container {
+  height: 80vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+}
+
+.container .heading {
+  padding: 5rem 0 0 0;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.container .heading a {
+  font-weight: 600;
+  font-size: 1.5rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.container .content {
+  width: 90%;
+  height: 50%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.container .content .left, .container .content .right {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.container .content .left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container .content .left p {
+  margin: 0 0 3rem 0;
+  padding-right: 1.5rem;
+}
+
+.container .content .right {
+  text-align: end;
+}
+
+.container .content .right img {
+  border-radius: 3rem 0 0 3rem;
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  width: 7.5rem;
+  height: 7.5rem;
+  border-radius: 50%;
+  background: var(--accent-secondary);
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.container::after {
+  content: "";
+  position: absolute;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: #F9393D;
+  top: 0.25rem;
+  left: 6.5rem;
+  z-index: -1;
+}
+
+@media screen and (max-width: 956px) and (min-width: 768px) {
+  .container {
+    height: auto;
+  }
+  .container .content {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    height: auto;
+  }
+  .container .content {
+    margin: 1.5rem;
+    height: 70%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  .container .content .left {
+    text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .container .content .left p {
+    padding: 0;
+    margin-bottom: 1.5rem;
+  }
+  .container .content .right {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding-bottom: 1.5rem;
+  }
+  .container .content .right img {
+    width: 400px;
+    border-radius: 0;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+}
+/*# sourceMappingURL=Featured.module.css.map */

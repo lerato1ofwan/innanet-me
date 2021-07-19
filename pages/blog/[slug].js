@@ -11,7 +11,6 @@ import back from '../../public/icons/back.svg'
 import { motion } from 'framer-motion';
 
 const BlogPost = ({ post, content }) => {
-    const { Title } = post;
 
     const components = {
         a: LinkTag,
@@ -38,7 +37,7 @@ const BlogPost = ({ post, content }) => {
                 <span>Back to blogs</span>
             </div>
             <div className={styles['blog-post-content']}>
-                <h1>{Title}</h1>
+                <h1>{post.Title}</h1>
 
                 <div className={styles.info}>
                    

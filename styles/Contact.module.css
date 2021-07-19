@@ -1,0 +1,163 @@
+.container {
+  height: 92vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .content {
+  padding: 1rem;
+  background-color: var(--dark-primary);
+  color: var(--light-primary);
+  height: 85%;
+  width: 70%;
+}
+
+.container .content .handshake {
+  width: 10rem;
+  margin: 0 auto;
+  text-align: center;
+  padding: .5rem;
+  border-radius: .65rem;
+  background: var(--accent-primary);
+  margin-bottom: 1.5rem;
+}
+
+.container .content .handshake img {
+  -webkit-filter: invert(90%);
+          filter: invert(90%);
+}
+
+.container .content .handshake p {
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.container .content h1, .container .content p {
+  text-align: center;
+}
+
+.container .content .form {
+  background: var(--light-primary);
+  width: 70%;
+  border-radius: .65rem;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.container .content .form label, .container .content .form p {
+  color: var(--dark-primary);
+}
+
+.container .content .form p {
+  font-weight: 600;
+  text-align: left;
+  padding-left: 1rem;
+  margin-bottom: 0;
+}
+
+.container .content .form form {
+  padding: 1rem;
+}
+
+.container .content .form form .form-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.container .content .form form .form-content .input-field {
+  padding: 0.6rem;
+  margin: .5rem 0rem;
+  border-radius: .65rem;
+  border: 2px solid var(--accent-primary);
+  color: var(--dark-primary);
+  width: 15rem;
+}
+
+.container .content .form form .form-content .message-input-field {
+  padding: 0.8rem;
+  margin: .2rem 0rem;
+  border-radius: .65rem;
+  border: 2px solid var(--accent-primary);
+  color: var(--dark-primary);
+  width: 15rem;
+}
+
+.container .content .form form .submit {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .content .form form .submit .send {
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  margin-top: 1.5rem;
+  display: block;
+  padding: .8rem 1.5rem;
+  border: none;
+  border-radius: .65rem;
+  outline: none;
+  color: white;
+  font-weight: 500;
+  background: var(--accent-primary);
+  letter-spacing: 0.08rem;
+  font-size: 0.85rem;
+}
+
+.send:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+@media screen and (max-width: 1200px) {
+  .input-field {
+    max-width: 11rem;
+    width: auto;
+  }
+  .message-input-field {
+    max-width: 11rem;
+    width: auto;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .input-field {
+    max-width: 9rem;
+    width: auto;
+  }
+  .message-input-field {
+    max-width: 9rem;
+    width: auto;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    height: auto;
+    margin: 1.5rem 0;
+  }
+  .container .form-content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+/*# sourceMappingURL=Contact.module.css.map */

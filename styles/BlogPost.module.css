@@ -1,0 +1,130 @@
+.back {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 0.85rem;
+  max-width: 10rem;
+  padding: 1rem 0 0 1rem;
+  margin-left: 3rem;
+}
+
+.back span {
+  text-transform: uppercase;
+}
+
+.back:hover {
+  cursor: pointer;
+  color: var(--dark-secondary);
+  opacity: 0.8;
+}
+
+.blog-post-content {
+  width: 700px;
+  margin: 0 auto;
+  padding-top: 3rem;
+}
+
+.blog-post-content .info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-top: 1.5rem;
+}
+
+.blog-post-content .info .share {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.blog-post-content .info .share ul {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.blog-post-content .info .share ul li {
+  padding-right: 1.5rem;
+}
+
+.blog-post-content .info .author {
+  font-size: 0.75rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.blog-post-content .info .author p {
+  padding-left: .5rem;
+  margin: .25rem 0;
+}
+
+.blog-post-content .info .author .avatar {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.blog-post-content .quote {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-style: italic;
+  -webkit-box-shadow: #292929 3px 0px 0px 0px inset;
+          box-shadow: #292929 3px 0px 0px 0px inset;
+  padding-left: 1.5rem;
+}
+
+.blog-post-content .quote p {
+  margin-bottom: 0.25rem;
+}
+
+.blog-post-content .quote a {
+  color: var(--btn-primary);
+  font-weight: 500;
+}
+
+@media screen and (max-width: 1020px) {
+  .back {
+    margin-left: 2rem;
+    margin-left: 3rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .back {
+    padding: 1rem 0 0 1rem;
+    margin-left: 0;
+  }
+  .blog-post-content {
+    width: auto;
+    margin: 0 auto;
+    width: 85%;
+  }
+  .blog-post-content .wrapper img {
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=BlogPost.module.css.map */

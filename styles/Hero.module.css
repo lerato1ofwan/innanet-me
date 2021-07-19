@@ -1,0 +1,260 @@
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 88vh;
+  position: relative;
+}
+
+.container .left {
+  background-color: var(--dark-secondary);
+  -webkit-box-flex: 3.5;
+      -ms-flex: 3.5;
+          flex: 3.5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container .left h1, .container .left p {
+  width: 85%;
+  margin: 1.5rem auto;
+  color: var(--light-primary);
+}
+
+.container .left h1 {
+  font-size: 4rem;
+  margin-bottom: 0;
+}
+
+.container .left p {
+  margin-top: 1rem;
+}
+
+.container .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 76%;
+  z-index: 10;
+  background-color: white;
+}
+
+.container .right {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  margin-right: 3rem;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.container .right .content {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  width: 50%;
+  margin: 0 auto;
+  -webkit-transform: translate(25px) rotate(-90deg);
+          transform: translate(25px) rotate(-90deg);
+}
+
+.container .right .content .dev {
+  -webkit-animation: dev-fill-animation 0.5s ease forwards 3s;
+          animation: dev-fill-animation 0.5s ease forwards 3s;
+}
+
+.container .right .content .dev path:nth-child(1) {
+  stroke-dasharray: 360px;
+  stroke-dashoffset: 360;
+  -webkit-animation: dev-animation 2s forwards ease 0.2s;
+          animation: dev-animation 2s forwards ease 0.2s;
+}
+
+.container .right .content .dev path:nth-child(2) {
+  stroke-dasharray: 324px;
+  stroke-dashoffset: 324px;
+  -webkit-animation: dev-animation 2s forwards ease 0.6s;
+          animation: dev-animation 2s forwards ease 0.6s;
+}
+
+.container .right .content .dev path:nth-child(3) {
+  stroke-dasharray: 319px;
+  stroke-dashoffset: 319px;
+  -webkit-animation: dev-animation 2s forwards ease 0.9s;
+          animation: dev-animation 2s forwards ease 0.9s;
+}
+
+.container .right .content p {
+  color: var(--accent-primary);
+  margin: 0;
+  font-weight: 500;
+  text-align: left;
+  min-width: 200px;
+  opacity: 0;
+  -webkit-animation: fade 1s forwards 2.5s ease-in;
+          animation: fade 1s forwards 2.5s ease-in;
+}
+
+.container .scroll {
+  position: absolute;
+  bottom: 0;
+  left: 6%;
+}
+
+.container .scroll svg {
+  width: 2rem;
+}
+
+.container .scroll svg .circle {
+  animation: scroll-animation 1s infinite alternate-reverse;
+}
+
+@-webkit-keyframes fade {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes scroll-animation {
+  from {
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+    z-index: 5;
+  }
+  to {
+    -webkit-transform: translate(0px, 37px);
+            transform: translate(0px, 37px);
+    z-index: 5;
+  }
+}
+
+@keyframes scroll-animation {
+  from {
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+    z-index: 5;
+  }
+  to {
+    -webkit-transform: translate(0px, 37px);
+            transform: translate(0px, 37px);
+    z-index: 5;
+  }
+}
+
+@-webkit-keyframes dev-animation {
+  to {
+    stroke-dashoffset: 0px;
+  }
+}
+
+@keyframes dev-animation {
+  to {
+    stroke-dashoffset: 0px;
+  }
+}
+
+@-webkit-keyframes dev-fill-animation {
+  from {
+    fill: transparent;
+  }
+  to {
+    fill: var(--dark-secondary);
+  }
+}
+
+@keyframes dev-fill-animation {
+  from {
+    fill: transparent;
+  }
+  to {
+    fill: var(--dark-secondary);
+  }
+}
+
+@media screen and (max-width: 956px) and (min-width: 768px) {
+  .container .left {
+    -webkit-box-flex: 2.8;
+        -ms-flex: 2.8;
+            flex: 2.8;
+  }
+  .container .right {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    width: 100%;
+  }
+  .container .left {
+    -webkit-box-flex: 1.5;
+        -ms-flex: 1.5;
+            flex: 1.5;
+  }
+  .container .left h1 {
+    font-size: 2rem;
+  }
+  .container .left .scroll {
+    position: absolute;
+    bottom: 0;
+  }
+  .container .left .scroll svg {
+    width: 2rem;
+  }
+  .container .right {
+    max-width: 150px;
+    margin: 0;
+    background-color: var(--dark-secondary);
+  }
+  .container .right .content {
+    right: 50;
+    -webkit-transform: translate(25px) rotate(0deg);
+            transform: translate(25px) rotate(0deg);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    margin: 0;
+  }
+  .container .right .content svg {
+    -webkit-transform: translate(25px) rotate(-90deg);
+            transform: translate(25px) rotate(-90deg);
+    margin-bottom: 1rem;
+    z-index: -1;
+    max-width: 80px;
+  }
+  .container .right .content svg path {
+    stroke: var(--light-secondary);
+  }
+  .container .right .content p {
+    text-align: right;
+    font-size: .8rem;
+    min-width: 100px;
+  }
+}
+/*# sourceMappingURL=Hero.module.css.map */

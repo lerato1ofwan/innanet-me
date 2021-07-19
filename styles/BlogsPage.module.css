@@ -1,0 +1,30 @@
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.container h1 {
+  padding: 3rem 0 1.5rem 0;
+}
+
+.container .blogs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-top: 0.05rem solid var(--accent-primary);
+  padding-top: 1.5rem;
+}
+
+.container .blogs ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.container .blogs ul li {
+  width: 75%;
+  margin: 0 auto;
+}
+/*# sourceMappingURL=BlogsPage.module.css.map */

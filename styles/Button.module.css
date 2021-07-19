@@ -1,0 +1,39 @@
+.all a {
+  border-radius: 1rem;
+  letter-spacing: 0.025rem;
+  padding: .85rem 1.4rem;
+  font-size: .8rem;
+  font-weight: 600;
+  color: var(--light-secondary);
+  text-align: center;
+}
+
+.dark {
+  color: var(--dark-primary);
+}
+
+.gradient-action {
+  width: 85%;
+  margin: 1.5rem auto;
+}
+
+.gradient-action a {
+  padding: 0.8rem 1rem;
+  background: var(--btn-primary);
+  background: -webkit-gradient(linear, left top, right top, from(#8c41ee), color-stop(7%, var(--btn-primary)), to(var(--accent-primary)));
+  background: linear-gradient(90deg, #8c41ee 0%, var(--btn-primary) 7%, var(--accent-primary) 100%);
+}
+
+.blue-action a {
+  background: var(--btn-primary);
+}
+
+@media screen and (max-width: 768px) {
+  .gradient-action {
+    margin-top: 4rem;
+  }
+  .gradient-action a {
+    padding: 0.8rem;
+  }
+}
+/*# sourceMappingURL=Button.module.css.map */

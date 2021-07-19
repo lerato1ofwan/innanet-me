@@ -1,17 +1,12 @@
-import Head from 'next/head'
-import CountdownTimer from '../components/CountdownTimer'
-import Hero from '../components/Hero'
-import Featured from '../components/Featured'
-import Blogs from '../components/Blogs'
-import { isInDev, sortByDate } from '../src/GeneralHelpers'
-import Router from "next/router";
-import { motion } from 'framer-motion'
+import Head from 'next/head';
+import CountdownTimer from '../components/CountdownTimer';
+import Hero from '../components/Hero';
+import Featured from '../components/Featured';
+import Blogs from '../components/Blogs';
+import { isInDev, sortByDate } from '../src/GeneralHelpers';
+import { motion } from 'framer-motion';
 
-export default function Home({posts, fromCountdown}) {
-
-  if(fromCountdown){
-    Router.reload();
-  }
+export default function Home({posts}) {
 
   return (
     <motion.div
