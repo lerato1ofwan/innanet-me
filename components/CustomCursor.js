@@ -6,13 +6,15 @@ const CustomCursor = () => {
   const cursorRef = useRef(null);
 
   useEffect(() => {
-    if (cursorRef.current == null || cursorRef == null)
-        return;
-
     document.addEventListener('mousemove', e => {
+      console.log(cursorRef);
+      console.log(e);
         if (cursorRef.current == null)
               return;
-        cursorRef.current.setAttribute("style", "top: " + (e.pageY) + "px; left: " + (e.pageX) + "px;")
+        const {clientX, clientY} = e;
+        const mouseX = clientX - cursorRef.current.clientWidth / 2;
+        const mouseY = clientY - cursorRef.current.clientHeight / 2;
+        cursorRef.current.setAttribute("style", "top: " + (mouseY) + "px; left: " + (mouseX) + "px;");
     });
 
     document.addEventListener('click', () => {
@@ -30,7 +32,7 @@ const CustomCursor = () => {
   }, []);
 
     return (
-      <div className={styles.cursor}>
+      <div className={styles.cursor} ref={cursorRef}>
         
       </div>
     );
