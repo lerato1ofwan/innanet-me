@@ -5,6 +5,7 @@ import Featured from '../components/Featured';
 import Blogs from '../components/Blogs';
 import { isInDev, sortByDate } from '../src/GeneralHelpers';
 import { motion } from 'framer-motion';
+import CustomCursor from './../components/CustomCursor';
 
 export default function Home({posts}) {
 
@@ -21,6 +22,7 @@ export default function Home({posts}) {
           <title>Lerato Letsepe | Home</title>
           <link rel="icon" href="/logo.svg" />
         </Head>
+        <CustomCursor />
 
         { isInDev() ? 
             <CountdownTimer />
