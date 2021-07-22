@@ -3,6 +3,7 @@ import { AnimatePresence } from "framer-motion";
 import Router from "next/router";
 import '../styles/globals.scss'
 import Layout from '../components/Layout'
+import CustomCursor from './../components/CustomCursor';
 
 function MyApp(props) {
   const { Component, pageProps, router } = props;
@@ -46,8 +47,9 @@ function MyApp(props) {
   return (
     <Layout>
       <AnimatePresence exitBeforeEnter={true} onExitComplete={onExit}>
-      <Component {...pageProps} key={router.route} />
-    </AnimatePresence>
+        <CustomCursor />
+        <Component {...pageProps} key={router.route} />
+      </AnimatePresence>
     </Layout>
   );
 }
