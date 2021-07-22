@@ -1,17 +1,11 @@
 .cursor {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 3.5rem;
-  height: 3.5rem;
-  border: 2px solid white;
-  border-radius: 100%;
-  transform: translate(-50%, -50%);
-  -webkit-transition-duration: 100ms;
-  transition-duration: 100ms;
-  -webkit-transition-timing-function: ease-out;
-  transition-timing-function: ease-out;
-  will-change: width, height, transform, border;
   z-index: 999;
+  border: 4px solid white;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
   pointer-events: none;
+  overflow: hidden;
+  transform: translate3d(0, 0, 0);
 }
