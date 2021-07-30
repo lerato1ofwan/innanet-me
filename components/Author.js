@@ -1,5 +1,4 @@
 import styles from '../styles/Author.module.scss';
-import { getStrapiMedia } from '../src/media';
 import { getDate } from '../src/GeneralHelpers';
 import Image from 'next/image'
 import save from '../public/icons/save.svg'
@@ -7,7 +6,7 @@ import save from '../public/icons/save.svg'
 const Author = ({ post, withSave }) => {
 
     const date = getDate(post.PublishedDate);
-    const profileImageUrl = getStrapiMedia(post.author.ProfileImage);
+    const profileImageUrl = post.author.ProfileImage.url;
 
     return ( 
         <div className={styles.author}>
