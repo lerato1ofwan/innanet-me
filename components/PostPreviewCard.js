@@ -1,7 +1,6 @@
 import styles from '../styles/PostPreviewCard.module.scss'
 import Link from 'next/link';
 import Image from 'next/image';
-import { getStrapiMedia } from '../src/media';
 import { blurDataUrl } from '../src/GeneralHelpers';
 import Author from './Author';
 
@@ -9,7 +8,7 @@ const PostPreviewCard = ({ post }) => {
 
     const tags = post.Tags.split(',');
 
-    const imageUrl = getStrapiMedia(post.Cover);
+    const imageUrl = post.Cover.url;
     const img = post.Cover.formats.medium;
     
     return ( 
