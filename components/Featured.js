@@ -21,7 +21,7 @@ const Featured = ({post}) => {
             className={styles.container}>
 
             <div className={styles.heading}>
-                <PageTitle text="Featured post"/>
+                <PageTitle text="Featured post" featured={true}/>
                 <Link href={`/blog/${Slug}`}><a>{Title}</a></Link>
             </div>
             
