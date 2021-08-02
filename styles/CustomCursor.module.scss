@@ -1,11 +1,44 @@
 .cursor {
-  position: absolute;
-  z-index: 999;
-  border: 4px solid white;
-  width: 4rem;
-  height: 4rem;
+  width: 3.5rem;
+  height: 3.5rem;
+  border: 2px solid white;
   border-radius: 50%;
+  position: fixed;
+  transform: translate(-50%, -50%);
   pointer-events: none;
-  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+  transition-property: background, transform;
+  transform-origin: 75% 75%;
   transform: translate3d(0, 0, 0);
+  z-index: 999;
+}
+
+.cursor.black {
+  border-color: black;
+}
+
+.cursor.white {
+  border-color: white;
+}
+
+.cursor.nav-active {
+  background: var(--accent-secondary);
+  transform: scale(2.5);
+  z-index: -5;
+}
+
+.title-swipe {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  mix-blend-mode: darken;
+  transform: translateY(100%);
+}
+
+.cursor.explore-active {
+  background: white;
+  transform: scale(2.5);
+  opacity: 0.9;
 }

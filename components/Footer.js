@@ -24,15 +24,15 @@ const Footer = () => {
             >
                 
                 <div className={styles.heading}>
-                    <h2>What's cutting?</h2>
-                    <p>I’ve decided to move my content to my own platform because it gives me the creative freedom <span>&amp;</span> flexibility to play around with some ideas I have for the future, so feel at home here.</p>
+                    <h2 className={styles['footer-div']}>What's cutting?</h2>
+                    <p className={styles['footer-div']}>I’ve decided to move my content to my own platform because it gives me the creative freedom <span>&amp;</span> flexibility to play around with some ideas I have for the future, so feel at home here.</p>
                 </div>
 
                 <div className={styles['reach-out']}>
 
                     <div className={styles.left}>
-                        <div>
-                            <h2>Like what you see?</h2>
+                        <div className={styles['footer-div']}>
+                            <h2 className={styles['footer-div']}>Like what you see?</h2>
                             <Link href='/hire'>
                                 <a className={styles['hire-me']}>Hire me</a>
                             </Link>
@@ -75,8 +75,8 @@ const Footer = () => {
             </motion.div>
 
             <div className={styles.copyright}>
-                <p>Designed & Developed with <span>💙</span> by Lerato Letsepe</p>
-                <p><span>&copy;</span> Copyright Lerato Letsepe. All rights reserved.</p>
+                <p className={styles.design}>Designed & Developed with <span>💙</span> by Lerato Letsepe</p>
+                <p className={styles.rights}><span>&copy;</span> Copyright Lerato Letsepe. All rights reserved.</p>
             </div>
         </footer> 
     );
