@@ -18,7 +18,7 @@ export default function Home({posts}) {
         }}
         >
         <Head>
-          <title>Lerato Letsepe | Home</title>
+          <title>Lerato Letsepe | Home, Software Engineer</title>
           <link rel="icon" href="/logo.svg" />
         </Head>
 

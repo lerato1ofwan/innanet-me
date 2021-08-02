@@ -13,7 +13,7 @@ const About = () => {
             exit={{ opacity: 0}}
         >
             <Head>
-                <title>Lerato Letsepe | About</title>
+            <title>Lerato Letsepe | About</title>
                 <link rel="icon" href="/logo.svg" />
             </Head>    
             <motion.div className={styles.content}>
