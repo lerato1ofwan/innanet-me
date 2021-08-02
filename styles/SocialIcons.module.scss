@@ -3,11 +3,11 @@
     display: flex;
     flex: 1;
     flex-direction: column;
-    justify-content: center;
 
     ul {
         display: flex;
         justify-content: space-evenly;
+        padding: 0;
 
         li {
             list-style: none;

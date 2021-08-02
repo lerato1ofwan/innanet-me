@@ -36,7 +36,7 @@
         background-color: white;
     }
 
-    .right {
+    .hero-right {
         flex: 1;
         height: 100%;
         display: flex;
@@ -135,7 +135,7 @@
             flex: 2.8;
         }
 
-        .right {
+        .hero-right {
             flex: 1;
         }
     }
@@ -162,7 +162,7 @@
             }
         }
 
-        .right {
+        .hero-right {
             max-width: 150px;
             margin: 0;
             background-color: var(--dark-secondary);
