@@ -1,8 +1,6 @@
 import { useRef, useEffect, useState } from 'react';
 import styles from '../styles/CustomCursor.module.scss';
 
-
-
 const CustomCursor = (props) => {
 
   const { pathname } = props;

@@ -147,6 +147,7 @@
 
         .left {
             flex: 1.5;
+            padding-left: 1rem;
 
             h1 {
                 font-size: 2rem;
@@ -166,6 +167,7 @@
             max-width: 150px;
             margin: 0;
             background-color: var(--dark-secondary);
+            padding-right: 1rem;
 
             .content {
                 right: 50;
@@ -192,6 +194,10 @@
                     min-width: 100px;
                 }
             }
+        }
+
+        .scroll {
+            padding-left: 1rem;
         }
     }
 }
