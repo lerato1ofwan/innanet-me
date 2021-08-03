@@ -50,7 +50,7 @@ const About = () => {
                 </div>
 
                 <motion.div variants={secondOpacity} initial='initial' animate='animate' className={styles.resume}>
-                    <Link href="/resume"><h2 className={styles['nav-link']}>Get my resume <span>→</span> </h2></Link>
+                    <Link href="/resume"><h2 className={styles.icon}>Get my resume <span>→</span> </h2></Link>
                 </motion.div>
             </motion.div>
         </motion.div>
