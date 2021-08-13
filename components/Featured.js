@@ -3,15 +3,16 @@ import Link from 'next/link'
 import Image from 'next/image'
 import PageTitle from './PageTitle'
 import Button from './Button'
-import { getStrapiMedia } from "../src/media";
 import { blurDataUrl } from '../src/GeneralHelpers'
 import { motion } from 'framer-motion'
 
 const Featured = ({post}) => {
     const { Title, Cover, FeaturedSubtitle, Slug  } = post;
 
-    const imageUrl = getStrapiMedia(Cover);
+    const imageUrl = Cover.url;
     const img = Cover.formats.small;
+
+    console.log('cover: ', Cover);
 
     return ( 
         <motion.div 
@@ -21,7 +22,8 @@ const Featured = ({post}) => {
             className={styles.container}>
 
             <div className={styles.heading}>
-                <PageTitle text="Featured post" featured={true}/>
+                <PageTitle text="Featured post" featured={true
+                }/>
                 <Link href={`/blog/${Slug}`}><a>{Title}</a></Link>
             </div>
             

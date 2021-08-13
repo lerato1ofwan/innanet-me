@@ -4,7 +4,6 @@ import styles from '../../styles/BlogPost.module.scss';
 import { useRouter } from 'next/router';
 import { MDXRemote } from 'next-mdx-remote';
 import { LinkTag, Qoute } from '../../components/MarkdownComponents';
-import { getStrapiMedia } from '../../src/media';
 import { getDate } from '../../src/GeneralHelpers';
 import { serialize } from 'next-mdx-remote/serialize';
 import back from '../../public/icons/back.svg'
@@ -24,7 +23,7 @@ const BlogPost = ({ post, content }) => {
     }
 
     const date = getDate(post.PublishedDate);
-    const profileImageUrl = getStrapiMedia(post.author.ProfileImage);
+    const profileImageUrl = post.author.ProfileImage.url;
 
     return ( 
         <motion.div 
