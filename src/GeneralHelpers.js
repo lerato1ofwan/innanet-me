@@ -2,12 +2,12 @@ import { months } from "./Constants";
 
 export const isInDev = () =>{
     const inDev = new Date();
-    const launchDate = new Date('August 16, 2021 12:00:00');
+    const launchDate = new Date('August 17, 2021 12:00:00');
     return inDev < launchDate;
 }
 
 export const getLaunchDate = () => {
-    return new Date('2021-08-16T12:00:00')
+    return new Date('2021-08-17T12:00:00')
 }
 
 export const blurDataUrl = () => {
@@ -42,16 +42,24 @@ export const handleOnSubmit = async(e, request) => {
 
     formData['type'] = request;
 
-    fetch('/api/mail', {
+    console.log('form: ', formData);
+
+    return fetch('http://localhost:3000/api/mail', {
         method: 'post',
         body: JSON.stringify(formData)
-    }).then(
-        (result) => {
-           return true;
-        },
-        (error) => {
-            console.error(error.message);
-            return false;
-        }
-    );
+    });
+
+    // fetch('http://localhost:3000/api/mail', {
+    //     method: 'post',
+    //     body: JSON.stringify(formData)
+    // }).then(
+    //     (result) => {
+    //         console.log(result)
+    //         return result;
+    //     },
+    //     (error) => {
+    //         console.error(error.message);
+    //         return false;
+    //     }
+    // );
 }
