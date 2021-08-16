@@ -41,25 +41,11 @@ export const handleOnSubmit = async(e, request) => {
     });
 
     formData['type'] = request;
-
-    console.log('form: ', formData);
+    if(formData['subject'] == null)
+        formData['subject'] = `${formData.name} would like to collaborate with you.`
 
     return fetch('http://localhost:3000/api/mail', {
         method: 'post',
         body: JSON.stringify(formData)
     });
-
-    // fetch('http://localhost:3000/api/mail', {
-    //     method: 'post',
-    //     body: JSON.stringify(formData)
-    // }).then(
-    //     (result) => {
-    //         console.log(result)
-    //         return result;
-    //     },
-    //     (error) => {
-    //         console.error(error.message);
-    //         return false;
-    //     }
-    // );
 }
