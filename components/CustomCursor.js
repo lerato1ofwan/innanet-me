@@ -31,7 +31,7 @@ const CustomCursor = (props) => {
 
       const className = item.classList[0];
 
-      if(className != null && (className.toLowerCase().includes("footer"))) {
+      if(className != null && (className.toLowerCase().includes("footer") || (className.toLowerCase().includes("hero_left")))) {
         setCursorColor("white");
       } else if (className != null && (className.toLowerCase().includes("hero-right") || className.toLowerCase().includes("social-links") || className.toLowerCase().includes("slinks") 
       || className.toLowerCase().includes("featured") || className.toLowerCase().includes("p-text") || className.toLowerCase().includes("nav-bar"))) {
