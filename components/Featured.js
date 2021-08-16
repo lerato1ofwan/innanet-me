@@ -12,8 +12,6 @@ const Featured = ({post}) => {
     const imageUrl = Cover.url;
     const img = Cover.formats.small;
 
-    console.log('cover: ', Cover);
-
     return ( 
         <motion.div 
             initial={{ opacity: 0 }}
