@@ -50,8 +50,6 @@ const Navbar = ({ isHome }) => {
     const toggleNav = (e) => {
         setIsOpen(!isOpen);
 
-        console.log(navbarColor)
-
         if(navRef.current.attributes.getNamedItem("style") == null) {
             setNavbarColor("nav-active");
             navRef.current.setAttribute("style", "clip-path: circle(2500px at 100% -10%);");
