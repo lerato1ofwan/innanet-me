@@ -3,15 +3,11 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { handleOnSubmit } from '../src/GeneralHelpers'
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 const Footer = () => {
 
     const [messageSent, setMessageSent] = useState(false);
-
-    useEffect(()=> {
-        setMessageSent(false);
-    }, [messageSent]);
 
     return ( 
         <footer className={styles.footer}>
@@ -52,20 +48,31 @@ const Footer = () => {
                         <h2 className={styles.title}>Say hi<span className={styles.hi}>&#128071;</span></h2>
 
                         <form type="submit" onSubmit={(e) => {
-                                const delivered = handleOnSubmit(e, 'contact');
-                                setMessageSent(delivered);
-                                setTimeout(() => {
-                                    setMessageSent(false);
-                                }, 2500);
+                                handleOnSubmit(e, 'contact').then(
+                                    (result)=> {
+                                        const delivered = result.status == 200;
+                                        setMessageSent(delivered);
+                                        setTimeout(() => {
+                                            setMessageSent(false);
+                                        }, 2500);
+                                    },
+                                    (error) => {
+                                        const delivered = result.status == 200;
+                                        setMessageSent(delivered);
+                                        setTimeout(() => {
+                                            setMessageSent(false);
+                                        }, 2500);
+                                    }
+                                );
                             }
                         }>
-                            <input type="text" onChange={e => {}} name="name" className={styles['input-field']} placeholder="Your name" autoComplete="off" />
-                            <input type="text" onChange={e => {}} name="email" className={styles['input-field']} placeholder="Your email address" />
-                            <input type="text" onChange={e => {}} name="subject" className={styles['input-field']} placeholder="The subject" autoComplete="off"/>
-                            <textarea type="text" onChange={e => {}} name="message" className={styles['message-input-field']} placeholder="Message" autoComplete="off" rows="20" cols="50"></textarea>
+                            <input type="text" onChange={e => {}} name="name" className={styles['input-field']} placeholder="Your name" autoComplete="off" required/>
+                            <input type="text" onChange={e => {}} name="email" className={styles['input-field']} placeholder="Your email address" required/>
+                            <input type="text" onChange={e => {}} name="subject" className={styles['input-field']} placeholder="The subject" autoComplete="off" required/>
+                            <textarea type="text" onChange={e => {}} name="message" className={styles['message-input-field']} placeholder="Message" autoComplete="off" rows="20" cols="50" required></textarea>
                             <div className={styles.submit}>
                                 {!messageSent && <button id="submit" className={styles.send}>Send</button> }
-                                {messageSent && <p>Ayo</p> }
+                                {messageSent && <p className={styles.white}>Ay thanks, I've received your mail!</p> }
                             </div>
                         </form>
 

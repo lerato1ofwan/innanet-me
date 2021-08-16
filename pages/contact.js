@@ -11,10 +11,6 @@ const Contact = () => {
 
     const [messageSent, setMessageSent] = useState(false);
 
-    useEffect(()=> {
-        setMessageSent(false);
-    }, [messageSent]);
-
     return ( 
         <motion.div className={styles.container}
             initial={{ opacity: 0 }}
@@ -51,30 +47,41 @@ const Contact = () => {
                 <div className={styles.form}>
                     <p>Contact Form</p>
                     <form type="submit" onSubmit={(e) => {
-                                const delivered = handleOnSubmit(e, 'collaboration');
-                                setMessageSent(delivered);
-                                setTimeout(() => {
-                                    setMessageSent(false);
-                                }, 2500);
+                                handleOnSubmit(e, 'collaboration').then(
+                                    (result)=> {
+                                        const delivered = result.status == 200;
+                                        setMessageSent(delivered);
+                                        setTimeout(() => {
+                                            setMessageSent(false);
+                                        }, 2500);
+                                    },
+                                    (error) => {
+                                        const delivered = result.status == 200;
+                                        setMessageSent(delivered);
+                                        setTimeout(() => {
+                                            setMessageSent(false);
+                                        }, 2500);
+                                    }
+                                );
                             }
                         }>
                         <div className={styles['form-content']}>
                             <div className={styles.left}>
                                 <label htmlFor="name">Your name</label><br></br>
-                                <input type="text" name="name" className={styles['input-field']} autoComplete="off" /><br></br>
+                                <input type="text" name="name" className={styles['input-field']} autoComplete="off" required/><br></br>
                                 <label htmlFor="email">Your email</label><br></br>
-                                <input type="text" name="email" className={styles['input-field']} />
+                                <input type="text" name="email" className={styles['input-field']} required/>
                             </div>
                            
                             <div className={styles.right}>
                                 <label htmlFor="message">Message</label><br></br>
-                                <textarea type="text" name="message" className={styles['message-input-field']} autoComplete="off" rows="5" cols="30"></textarea>
+                                <textarea type="text" name="message" className={styles['message-input-field']} required autoComplete="off" rows="5" cols="30"></textarea>
                             </div>
                         </div>
                         
                         <div className={styles.submit}>
                             {!messageSent && <button className={styles.send} id="submit1">Send Message</button> }
-                            {messageSent && <p>Ayo</p> }
+                            {messageSent && <p>Ay thanks, I've received your mail!</p> }
                         </div>
                     </form>
                 </div>
