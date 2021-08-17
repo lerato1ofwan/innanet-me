@@ -2,12 +2,12 @@ import { months } from "./Constants";
 
 export const isInDev = () =>{
     const inDev = new Date();
-    const launchDate = new Date('August 17, 2021 12:00:00');
-    return inDev < launchDate;
+    const launchDate = new Date('August 22, 2021 12:00:00');
+    return inDev > launchDate;
 }
 
 export const getLaunchDate = () => {
-    return new Date('2021-08-17T12:00:00')
+    return new Date('2021-08-22T12:00:00')
 }
 
 export const blurDataUrl = () => {
