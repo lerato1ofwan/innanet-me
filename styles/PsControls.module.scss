@@ -1,0 +1,92 @@
+.triangle-control {
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    right: 69%;
+    top: 25%;
+    animation: animateTriangle 1s ease-in 4s infinite;
+}
+
+.controls {
+    position: relative;
+    left: 90%;
+    bottom: -20%;
+    animation: animateSquare 1s ease-in 4s infinite;
+}
+
+@keyframes animateSquare {
+    0% {
+        filter: drop-shadow(0px 0px 1px #BFD6FF)
+        drop-shadow(0px 0px 3px #e595f0)
+        drop-shadow(0px 0px 10px #e460e9)
+        drop-shadow(0px 0px 30px #a061f1)
+        drop-shadow(0px 0px 50px #8C41EE);
+    }
+    100% {
+        filter: drop-shadow(0px 0px 3px #BFD6FF)
+        drop-shadow(0px 0px 6px #e595f0)
+        drop-shadow(0px 0px 15px #e460e9)
+        drop-shadow(0px 0px 40px #a061f1)
+        drop-shadow(0px 0px 60px #8C41EE);
+    }
+}
+
+@keyframes animateTriangle {
+    0% {
+        filter: drop-shadow(0px 0px 1px #fff)
+        drop-shadow(0px 0px 3px #9cffba)
+        drop-shadow(0px 0px 10px #57ff89)
+        drop-shadow(0px 0px 30px #14d44e)
+        drop-shadow(0px 0px 50px #00ac34);
+    }
+    100% {
+        filter: drop-shadow(0px 0px 3px #fff)
+        drop-shadow(0px 0px 6px #9cffba)
+        drop-shadow(0px 0px 15px #57ff89)
+        drop-shadow(0px 0px 40px #14d44e)
+        drop-shadow(0px 0px 60px #00ac34);
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    .triangle-control {
+        top: 25%;
+    }
+
+    .controls {
+        left: 85%;
+        bottom: -15%;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .triangle-control {
+        top: 15%;
+    }
+
+    .controls {
+        left: 85%;
+        bottom: -10%;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .triangle-control {
+        top: 15%;
+    }
+
+    .controls {
+        bottom: -13%;
+    }
+}
+
+@media screen and (max-width: 678px) {
+    .triangle-control {
+        top: 8%;
+    }
+
+    .controls {
+        bottom: -10%;
+    }
+}
