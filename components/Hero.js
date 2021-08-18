@@ -2,18 +2,21 @@ import styles from '../styles/Hero.module.scss'
 import Image from 'next/image'
 import Button from './Button'
 import { motion } from "framer-motion"
+import Triangle from "../public/icons/pscontrols/Triangle"
+import Controls from "../public/icons/pscontrols/Controls"
 
 const Hero = () => {
 
     return (
         <div className={styles.container}>
 
-            <div className={styles['left']}>
+            <div className={styles.left}>
                 <h1>Welcome to my dev space</h1>
                 <p>I’m working on the brand, read my articles for now.</p>
            
                 <Button text="Check The Blog" type="gradient-action" link="blog"/>
-                
+                <Triangle />
+                <Controls />
             </div>
 
             <motion.div initial={{ x: 0 }} animate={{ x: "-100vw" }} transition={{ delay: 2, duration: 1.5 }} className={styles.overlay}></motion.div>
