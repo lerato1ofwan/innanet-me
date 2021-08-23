@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from "../styles/Resume.module.scss"
-import { resume } from "../public/resume.pdf"
+// import { resume } from "../public/resume.pdf"
 import Link from "next/link"
 
 const Resume = () => {
