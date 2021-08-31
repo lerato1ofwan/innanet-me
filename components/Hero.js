@@ -1,5 +1,4 @@
 import styles from '../styles/Hero.module.scss'
-import Image from 'next/image'
 import Button from './Button'
 import { motion } from "framer-motion"
 import Triangle from "../public/icons/pscontrols/Triangle"
@@ -12,7 +11,8 @@ const Hero = () => {
 
             <div className={styles.left}>
                 <h1>Welcome to my dev space</h1>
-                <p>I’m working on the brand, read my articles for now.</p>
+                <p className={styles.intro}>I'M LERATO - A FULL STACK ENGINEER</p>
+                <p>Currently working on the brand, you read my articles for now.</p>
            
                 <Button text="Check The Blog" type="gradient-action" link="blog"/>
                 <Triangle />
