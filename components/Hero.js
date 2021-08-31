@@ -11,7 +11,6 @@ const Hero = () => {
 
             <div className={styles.left}>
                 <h1>Welcome to my dev space</h1>
-                <p className={styles.intro}>I'M LERATO - A FULL STACK ENGINEER</p>
                 <p>Currently working on the brand, you can read my articles for now.</p>
            
                 <Button text="Check The Blog" type="gradient-action" link="blog"/>
