@@ -44,7 +44,7 @@ export const handleOnSubmit = async(e, request) => {
     if(formData['subject'] == null)
         formData['subject'] = `${formData.name} would like to collaborate with you.`
 
-    return fetch('http://localhost:3000/api/mail', {
+    return fetch(process.env.MAIL, {
         method: 'post',
         body: JSON.stringify(formData)
     });
