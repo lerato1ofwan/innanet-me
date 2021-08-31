@@ -6,9 +6,10 @@ import { motion } from 'framer-motion';
 import { easing, fadeInUp } from '../src/Motions';
 import { handleOnSubmit } from '../src/GeneralHelpers';
 import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router'
 
 const Contact = () => {
-
+    const router = useRouter();
     const [messageSent, setMessageSent] = useState(false);
 
     return ( 
@@ -27,7 +28,7 @@ const Contact = () => {
                     variants={fadeInUp}
                     initial='initial'
                     animate='animate'
-                >Get in touch!</motion.h1>
+                >{router.query?.request === 'hire' ? 'Hire me' : 'Get in touch!'}  </motion.h1>
                 <motion.p
                     variants={fadeInUp}
                     initial='initial'
@@ -70,7 +71,7 @@ const Contact = () => {
                                 <label htmlFor="name">Your name</label><br></br>
                                 <input type="text" name="name" className={styles['input-field']} autoComplete="off" required/><br></br>
                                 <label htmlFor="email">Your email</label><br></br>
-                                <input type="text" name="email" className={styles['input-field']} required/>
+                                <input type="email" name="email" className={styles['input-field']} required/>
                             </div>
                            
                             <div className={styles.right}>

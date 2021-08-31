@@ -29,7 +29,7 @@ const Footer = () => {
                     <div className={styles.left}>
                         <div className={styles['footer-div']}>
                             <h2 className={styles['footer-div']}>Like what you see?</h2>
-                            <Link href='/hire'>
+                            <Link href={{ pathname: '/contact', query: { request: 'hire' } }}>
                                 <a className={styles['hire-me']}>Hire me</a>
                             </Link>
                         </div>
@@ -67,7 +67,7 @@ const Footer = () => {
                             }
                         }>
                             <input type="text" onChange={e => {}} name="name" className={styles['input-field']} placeholder="Your name" autoComplete="off" required/>
-                            <input type="text" onChange={e => {}} name="email" className={styles['input-field']} placeholder="Your email address" required/>
+                            <input type="email" onChange={e => {}} name="email" className={styles['input-field']} placeholder="Your email address" required/>
                             <input type="text" onChange={e => {}} name="subject" className={styles['input-field']} placeholder="The subject" autoComplete="off" required/>
                             <textarea type="text" onChange={e => {}} name="message" className={styles['message-input-field']} placeholder="Message" autoComplete="off" rows="20" cols="50" required></textarea>
                             <div className={styles.submit}>
