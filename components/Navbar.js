@@ -94,17 +94,17 @@ const Navbar = ({ isHome }) => {
                         <li><Link href="/contact"><a className={`${styles[`nav-link`]} ${styles.collab}`}>Collaborate</a></Link></li>
                     </ul>
 
-                    <div id="burger" className={styles['burger-div']}>
-                        <motion.div className={styles.burger} id="burger" 
-                            variants={iconVariants}
-                            animate={isOpen ? "opened" : "closed"}
-                            whileHover={{ scale: 1.1 }}
-                            onClick={toggleNav}
-                        >
-                            <motion.div variants={line1Variants} className={styles.line1}></motion.div>
-                            <motion.div variants={line2Variants} className={styles.line2}></motion.div>
-                        </motion.div>
-                    </div>
+               
+                <motion.div className={styles.burger} id="burger" 
+                    variants={iconVariants}
+                    animate={isOpen ? "opened" : "closed"}
+                    whileHover={{ scale: 1.1 }}
+                    onClick={toggleNav}
+                >
+                    <motion.div variants={line1Variants} className={styles.line1}></motion.div>
+                    <motion.div variants={line2Variants} className={styles.line2}></motion.div>
+                </motion.div>
+    
                 </nav>
             </div>
 
