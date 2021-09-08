@@ -115,10 +115,6 @@
     justify-content: space-around;
     align-items: center;
 
-    .active {
-      color: var(--btn-primary);
-    }
-
     a {
       font-weight: 600;
     }
@@ -140,6 +136,10 @@
       list-style: none;
     }
   }
+}
+
+.active {
+  color: var(--btn-primary);
 }
 
 .nav-bar.all {

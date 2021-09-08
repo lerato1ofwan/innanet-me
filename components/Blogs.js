@@ -27,7 +27,7 @@ const Blogs = ({posts}) => {
                 </motion.div>
                 
                 <div className={styles.more}>
-                    <Button text="View All" type="" link="blog" />
+                    <Button text="View All" type="" link="/blog" />
                 </div>
     
             </div>

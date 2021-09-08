@@ -13,7 +13,7 @@ const Hero = () => {
                 <h1>Welcome to my dev space</h1>
                 <p>Currently working on the brand, you can read my articles for now.</p>
            
-                <Button text="Check The Blog" type="gradient-action" link="blog"/>
+                <Button text="Check The Blog" type="gradient-action" link="/blog"/>
                 <Triangle />
                 <Controls />
             </div>

@@ -114,10 +114,10 @@ const Navbar = ({ isHome }) => {
 
             <div id="nav-bar" className={styles['nav-bar']} ref={navRef}>
                 <div className={styles['nav-items']}>
-                    <Link href="/" className={styles['nav__link']}><a className={styles[`${isHome && `active`}`]} onClick={toggleNav}>Home</a></Link>
-                    <Link href="/blog" className={styles['nav__link']}><a className={styles[`${route == '/blog' && `active`}`]} onClick={toggleNav}>Blog</a></Link>
-                    <Link href="/about" className={styles['nav__link']}><a className={styles[`${route == '/about' && `active`}`]} onClick={toggleNav}>About</a></Link>
-                    <Link href="/contact" className={styles['nav__link']}><a className={styles[`${route == '/contact' && `active`}`]} onClick={toggleNav}>Contact</a></Link>
+                    <Link href="/" className={styles['nav__link']}><a className={styles[`${isHome ? `active` : ``}`]} onClick={toggleNav}>Home</a></Link>
+                    <Link href="/blog" className={styles['nav__link']}><a className={styles[`${route == '/blog' ? `active` : ``}`]} onClick={toggleNav}>Blog</a></Link>
+                    <Link href="/about" className={styles['nav__link']}><a className={styles[`${route == '/about' ? `active` : ``}`]} onClick={toggleNav}>About</a></Link>
+                    <Link href="/contact" className={styles['nav__link']}><a className={styles[`${route == '/contact' ? `active` : ``}`]} onClick={toggleNav}>Contact</a></Link>
                 </div>
                 <h2>Connect with me <span>→</span></h2>
                 <ul>
