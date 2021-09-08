@@ -1,10 +1,15 @@
 import styles from '../styles/Navbar.module.scss'
 import Link from 'next/link'
+import Image from 'next/image'
 import SocialIcons from './SocialIcons'
 import { motion } from 'framer-motion'
 import React, { useState, useRef, useEffect } from "react";
+import { useRouter } from 'next/router'
 
 const Navbar = ({ isHome }) => {
+
+    const router = useRouter();
+    const { route } = router;
 
     const [isOpen, setIsOpen] = useState(false);
     const [navbarColor, setNavbarColor] = useState("inactive");
@@ -68,7 +73,8 @@ const Navbar = ({ isHome }) => {
             <div className={`${styles.header} ${styles[`${navbarColor}`]}`}>
                <div id="logo" className={styles.logo}>
                     <Link href='/'>
-                        <svg id="logo-icon" width="100" height="58" viewBox="0 0 135 58" fill="none" xmlns="http://www.w3.org/2000/svg">
+                       <a onClick={isOpen && toggleNav}> 
+                       <svg id="logo-icon" width="100" height="58" viewBox="0 0 135 58" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M4.33964 15.454C2.97639 15.8865 1.7518 16.1441 0.660156 16.2409V8.83164C1.59067 8.71384 2.60092 8.435 3.68056 8.0205L3.68061 8.02064L3.69585 8.01455C5.18996 7.41293 6.65375 6.71193 8.08717 5.91199C9.56808 5.11658 10.8376 4.33748 11.8885 3.57355L11.8923 3.57071C12.7032 2.97504 13.3653 2.42516 13.8021 1.93213H23.8543V34.029V34.915H24.8177H34.5245V42.0119H2.34048V34.915H13.3075H14.2708V34.029V11.8206V9.39584L12.571 11.2493C12.0115 11.8596 10.9839 12.5789 9.39462 13.3917L9.39457 13.3916L9.38201 13.3982C7.87492 14.1965 6.19805 14.8817 4.34794 15.4515L4.34792 15.4513L4.33964 15.454Z" stroke="white" strokeWidth="1.25"/>
                             <path d="M103.976 29.6854C102.515 30.1489 101.205 30.4153 100.042 30.4981V22.7394C100.995 22.6379 102.044 22.357 103.18 21.9208L103.18 21.921L103.193 21.916C104.679 21.3175 106.136 20.6198 107.563 19.8235C109.039 19.0308 110.301 18.2561 111.343 17.4984L111.346 17.4962C112.196 16.8714 112.866 16.3088 113.284 15.8187H123.621V48.0928V48.8016H124.392H134.291V56.2529H101.722V48.8016H112.881H113.652V48.0928V25.8844V23.9446L112.292 25.4274C111.71 26.0622 110.659 26.7939 109.062 27.6103L109.052 27.6156C107.533 28.4203 105.844 29.1103 103.983 29.6832L103.976 29.6854Z" stroke="white"/>
                             <path d="M21.0297 33.4033L21.0297 33.4033L21.0309 33.4006C21.9737 31.3447 23.2971 29.5245 25.0052 27.9394L25.0053 27.9395L25.0089 27.936C26.716 26.3199 28.7157 25.0501 31.0127 24.1278L31.0127 24.1278L31.0156 24.1266C33.3397 23.1762 35.8885 22.6979 38.6679 22.6979C41.4837 22.6979 44.0293 23.192 46.3122 24.1722L46.3149 24.1733C48.6499 25.16 50.629 26.4765 52.2597 28.1204L52.2596 28.1204L52.2636 28.1243C53.9371 29.7747 55.2056 31.6263 56.0749 33.6803L56.0748 33.6803L56.0791 33.6897C56.9854 35.7135 57.4357 37.7775 57.4357 39.8865C57.4357 42.0928 56.9665 44.2203 56.0257 46.2731C55.0829 48.2977 53.758 50.1193 52.0468 51.7394L52.0465 51.7396C50.379 53.3206 48.381 54.5747 46.0456 55.4977L46.0431 55.4987C43.7557 56.4171 41.2433 56.8797 38.4999 56.8797C35.6445 56.8797 33.0591 56.4009 30.7369 55.4515C28.4407 54.4975 26.4611 53.213 24.7925 51.6C23.1547 49.9481 21.8844 48.1102 20.9774 46.0847C20.0709 44.0285 19.6201 41.9308 19.6201 39.7888C19.6201 37.5485 20.0897 35.4218 21.0297 33.4033ZM27.8605 45.684L27.8604 45.684L27.8643 45.6914C28.8389 47.528 30.2241 49.0244 32.0117 50.1772L32.0158 50.1798C33.8634 51.3459 36.0507 51.9184 38.556 51.9184C41.1349 51.9184 43.3459 51.3297 45.1616 50.1246C46.9498 48.9379 48.3166 47.4064 49.2531 45.5341L49.2532 45.5341C50.1819 43.6771 50.6502 41.7606 50.6502 39.7888C50.6502 37.6888 50.164 35.7185 49.1915 33.8862C48.2156 32.0471 46.8093 30.5659 44.9832 29.4461C43.1728 28.2801 41.023 27.7081 38.556 27.7081C35.9769 27.7081 33.7659 28.2967 31.9502 29.5017C30.1625 30.6882 28.796 32.2192 27.8596 34.0907C26.9297 35.9163 26.4616 37.8173 26.4616 39.7888C26.4616 41.8853 26.9275 43.8529 27.8605 45.684ZM71.0946 42.7694V56.6353H64.365V22.9421H90.0822V27.8547H71.5946H71.0946V28.3547V37.2967V37.7967H71.5946H86.8896V42.2694H71.5946H71.0946V42.7694Z" stroke="white"/>
@@ -78,6 +84,7 @@ const Navbar = ({ isHome }) => {
                             <path d="M96.3622 5.3269L85.5728 16.6676" stroke="white" strokeWidth="0.3"/>
                             <path d="M36.0753 43.4615H22.2031V33.5385H36.0753V43.4615Z" fill="white"/>
                         </svg>
+                       </a>
                     </Link>
                 </div>
                 <nav>
@@ -106,10 +113,18 @@ const Navbar = ({ isHome }) => {
             <SocialIcons isHome={isHome} />
 
             <div id="nav-bar" className={styles['nav-bar']} ref={navRef}>
-                <a href="#" className={styles['nav__link']}>Home</a>
-                <a href="#" className={styles['nav__link']}>About</a>
-                <a href="#" className={styles['nav__link']}>Shop</a>
-                <a href="#" className={styles['nav__link']}>Contact</a>
+                <div className={styles['nav-items']}>
+                    <Link href="/" className={styles['nav__link']}><a className={styles[`${isHome && `active`}`]} onClick={toggleNav}>Home</a></Link>
+                    <Link href="/blog" className={styles['nav__link']}><a className={styles[`${route == '/blog' && `active`}`]} onClick={toggleNav}>Blog</a></Link>
+                    <Link href="/about" className={styles['nav__link']}><a className={styles[`${route == '/about' && `active`}`]} onClick={toggleNav}>About</a></Link>
+                    <Link href="/contact" className={styles['nav__link']}><a className={styles[`${route == '/contact' && `active`}`]} onClick={toggleNav}>Contact</a></Link>
+                </div>
+                <h2>Connect with me <span>→</span></h2>
+                <ul>
+                    <li><a target="_blank" href="https://www.github.com/lerato1ofone" rel="noopener noreferrer"><Image className={styles.icon} src="/icons/github.svg" alt="github" width="25" height="25"/></a></li>
+                    <li><a target="_blank" href="https://www.twitter.com/lerato1ofone" rel="noopener noreferrer"><Image className={styles.icon} src="/icons/twitter.svg" alt="twitter" width="25" height="25"/></a></li>
+                    <li><a target="_blank" href="https://www.linkedin.com/in/lerato-letsepe-1312b5156/" rel="noopener noreferrer"><Image className={styles.icon} src="/icons/linkedin.svg" alt="linkedin" width="25" height="25"/></a></li>
+                </ul>
             </div>
         </div>
     );

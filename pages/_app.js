@@ -46,7 +46,7 @@ function MyApp(props) {
 
   return (
     <Layout>
-      <AnimatePresence exitBeforeEnter={true} onExitComplete={onExit}>
+      <AnimatePresence onExitComplete={onExit} exitBeforeEnter={true}>
         <CustomCursor {...router}/>
         <Component {...pageProps} key={router.route} />
       </AnimatePresence>
