@@ -3,7 +3,6 @@ import Image from 'next/image';
 import styles from '../styles/About.module.scss';
 import { motion } from 'framer-motion';
 import { fadeInUp, opacity, secondOpacity } from '../src/Motions';
-import AboutMeImage from '../public/images/IMG_4738.jpg'
 
 const About = () => {
 
@@ -42,7 +41,7 @@ const About = () => {
                         initial='initial'
                         animate='animate'
                     >
-                        <Image className={styles.image} src={AboutMeImage} alt="About me image" objectFit="cover" fill
+                        <Image className={styles.image} src={"/images/IMG_4738.jpg"} alt="About me image" objectFit="cover" fill={true}
                             width={250}
                             height={250} />
                     </motion.div>
