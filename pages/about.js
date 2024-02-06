@@ -1,11 +1,22 @@
 import Head from 'next/head';
 import Image from 'next/image';
-import Link from 'next/link';
 import styles from '../styles/About.module.scss';
 import { motion } from 'framer-motion';
 import { fadeInUp, opacity, secondOpacity } from '../src/Motions';
 
 const About = () => {
+
+    function getAge(dateString) {
+        var today = new Date();
+        var birthDate = new Date(dateString);
+        var age = today.getFullYear() - birthDate.getFullYear();
+        var m = today.getMonth() - birthDate.getMonth();
+        if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+            age--;
+        }
+        return age;
+    }
+
     return ( 
         <motion.div className={styles.container}
             initial={{ opacity: 0 }}
@@ -39,12 +50,12 @@ const About = () => {
                     >
                         <h1>Hey there!</h1>
                         <h3>My name is <motion.span variants={secondOpacity}>Lerato Letsepe <span style={{ fontSize: '1.5rem' }}>&#128516;</span></motion.span></h3>
-                        <p>I'm a 22-year-old FULL STACK ENGINEER at Retro Rabbit who works with C#, JavaScript and sometimes Java. I love everything .NET, React, NextJs, Node, Flutter, Spring Boot, AWS and lots of other modern web technologies I get to interact with daily!<br></br><br></br>On days when I don't feel like writing code I'm always happy to get my hands a little dirty with some design work in Adobe Illustrator and Figma.<br></br><br></br>I have a passion for sharing my knowledge with other people and motivating others by displaying my passion for programming!</p>
+                        <p>I'm a {getAge("1999/12/01")}-years old FULL STACK ENGINEER at Raging River (Pty) Ltd who works with C#, JavaScript and sometimes Java. I love everything .NET, React, NextJs, Node, Flutter, Spring Boot, AWS and lots of other modern web technologies I get to interact with daily!<br></br><br></br>On days when I don't feel like writing code I'm always happy to get my hands a little dirty with some design work in Adobe Illustrator and Figma.<br></br><br></br>I have a passion for sharing my knowledge with other people and motivating others by displaying my passion for programming!</p>
                     </motion.div>
                     
                     <ul>
-                        <li><a target="_blank" href="https://www.github.com/lerato1ofone" rel="noopener noreferrer"><Image className={styles.icon} src="/icons/github.svg" alt="github" width="25" height="25"/></a></li>
-                        <li><a target="_blank" href="https://www.twitter.com/lerato1ofone" rel="noopener noreferrer"><Image className={styles.icon} src="/icons/twitter.svg" alt="twitter" width="25" height="25"/></a></li>
+                        <li><a target="_blank" href="https://www.github.com/lerato1ofwan" rel="noopener noreferrer"><Image className={styles.icon} src="/icons/github.svg" alt="github" width="25" height="25"/></a></li>
+                        <li><a target="_blank" href="https://www.twitter.com/lerato1ofwan" rel="noopener noreferrer"><Image className={styles.icon} src="/icons/twitter.svg" alt="twitter" width="25" height="25"/></a></li>
                         <li><a target="_blank" href="https://www.linkedin.com/in/lerato-letsepe-1312b5156/" rel="noopener noreferrer"><Image className={styles.icon} src="/icons/linkedin.svg" alt="linkedin" width="25" height="25"/></a></li>
                     </ul>
                 </div>
