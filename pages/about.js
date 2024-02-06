@@ -3,6 +3,7 @@ import Image from 'next/image';
 import styles from '../styles/About.module.scss';
 import { motion } from 'framer-motion';
 import { fadeInUp, opacity, secondOpacity } from '../src/Motions';
+import AboutMeImage from '../public/images/IMG_4738.jpg'
 
 const About = () => {
 
@@ -17,16 +18,16 @@ const About = () => {
         return age;
     }
 
-    return ( 
+    return (
         <motion.div className={styles.container}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            exit={{ opacity: 0}}
+            exit={{ opacity: 0 }}
         >
             <Head>
-            <title>Lerato Letsepe | About</title>
+                <title>Lerato Letsepe | About</title>
                 <link rel="icon" href="/logo.svg" />
-            </Head>    
+            </Head>
             <motion.div className={styles.content}>
                 <div className={styles.about}>
                     <h2>About me → </h2>
@@ -36,13 +37,17 @@ const About = () => {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                 >
-                    <motion.div className={styles.image}
+                    <motion.div
                         variants={fadeInUp}
                         initial='initial'
                         animate='animate'
                     >
-                        
+                        <Image className={styles.image} src={AboutMeImage} alt="About me image" objectFit="cover" fill
+                            width={250}
+                            height={250} />
                     </motion.div>
+
+
                     <motion.div className={styles.info}
                         variants={opacity}
                         initial='initial'
@@ -52,11 +57,11 @@ const About = () => {
                         <h3>My name is <motion.span variants={secondOpacity}>Lerato Letsepe <span style={{ fontSize: '1.5rem' }}>&#128516;</span></motion.span></h3>
                         <p>I'm a {getAge("1999/12/01")}-years old FULL STACK ENGINEER at Raging River (Pty) Ltd who works with C#, JavaScript and sometimes Java. I love everything .NET, React, NextJs, Node, Flutter, Spring Boot, AWS and lots of other modern web technologies I get to interact with daily!<br></br><br></br>On days when I don't feel like writing code I'm always happy to get my hands a little dirty with some design work in Adobe Illustrator and Figma.<br></br><br></br>I have a passion for sharing my knowledge with other people and motivating others by displaying my passion for programming!</p>
                     </motion.div>
-                    
+
                     <ul>
-                        <li><a target="_blank" href="https://www.github.com/lerato1ofwan" rel="noopener noreferrer"><Image className={styles.icon} src="/icons/github.svg" alt="github" width="25" height="25"/></a></li>
-                        <li><a target="_blank" href="https://www.twitter.com/lerato1ofwan" rel="noopener noreferrer"><Image className={styles.icon} src="/icons/twitter.svg" alt="twitter" width="25" height="25"/></a></li>
-                        <li><a target="_blank" href="https://www.linkedin.com/in/lerato-letsepe-1312b5156/" rel="noopener noreferrer"><Image className={styles.icon} src="/icons/linkedin.svg" alt="linkedin" width="25" height="25"/></a></li>
+                        <li><a target="_blank" href="https://www.github.com/lerato1ofwan" rel="noopener noreferrer"><Image className={styles.icon} src="/icons/github.svg" alt="github" width="25" height="25" /></a></li>
+                        <li><a target="_blank" href="https://www.twitter.com/lerato1ofwan" rel="noopener noreferrer"><Image className={styles.icon} src="/icons/twitter.svg" alt="twitter" width="25" height="25" /></a></li>
+                        <li><a target="_blank" href="https://www.linkedin.com/in/lerato-letsepe-1312b5156/" rel="noopener noreferrer"><Image className={styles.icon} src="/icons/linkedin.svg" alt="linkedin" width="25" height="25" /></a></li>
                     </ul>
                 </div>
 
@@ -65,7 +70,7 @@ const About = () => {
                 </motion.div>
             </motion.div>
         </motion.div>
-     );
+    );
 }
- 
+
 export default About;

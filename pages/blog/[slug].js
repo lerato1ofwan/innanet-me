@@ -67,7 +67,7 @@ const BlogPost = ({ post, content }) => {
               <li>
                 <a
                   target='_blank'
-                  href={`http://twitter.com/share?text=🚀Check you this amazing blog post by @lerato1ofone 😃🔌&url=${process.env.NEXT_PUBLIC_HOST}/${post.Slug}`}
+                  href={`http://twitter.com/share?text=🚀Check you this amazing blog post by @lerato1ofwan 😃🔌&url=${process.env.NEXT_PUBLIC_HOST}/${post.Slug}`}
                   rel='noopener noreferrer'
                 >
                   <img

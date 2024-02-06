@@ -31,7 +31,7 @@ const PostPreviewCard = ({ post }) => {
                 
                 <div className={styles.socials}>
                     <ul>
-                        <li><a target="_blank" href={`http://twitter.com/share?text=🚀Check you this amazing blog post by @lerato1ofone 😃🔌&url=${process.env.NEXT_PUBLIC_HOST}/${post.Slug}`} rel="noopener noreferrer"><img className={styles.social} src="/icons/twitter.svg" alt="twitter" width="25" height="25"/></a></li>
+                        <li><a target="_blank" href={`http://twitter.com/share?text=🚀Check you this amazing blog post by @lerato1ofwan 😃🔌&url=${process.env.NEXT_PUBLIC_HOST}/${post.Slug}`} rel="noopener noreferrer"><img className={styles.social} src="/icons/twitter.svg" alt="twitter" width="25" height="25"/></a></li>
                         <li><a target="_blank" href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(`${process.env.NEXT_PUBLIC_HOST}/${post.Slug}`)}`} rel="noopener noreferrer"><img className={styles.social} src="/icons/linkedin.svg" alt="linkedin" width="25" height="25"/></a></li>
                     </ul>
                 </div>
